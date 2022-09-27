@@ -1,0 +1,1139 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 13:25:17 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 10216@DESKTOP-D1FDVAS
+
+[2022-05-22 13:25:17 #2 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 13:25:17 #3 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 13:25:17 #4 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 13:25:17 #5 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 13:25:17 #6 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 13:25:17 #7 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 13:25:17 #8 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 13:25:17 #9 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 13:25:17 #10 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 13:25:17 #11 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 15:50:35 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' has been recovered (tr. 27-30)
+
+[2022-05-22 15:50:35 #2 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 25044@DESKTOP-D1FDVAS
+
+[2022-05-22 15:50:35 #3 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 15:50:35 #4 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 15:50:35 #5 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 15:50:35 #6 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 15:50:35 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 15:50:35 #8 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 15:50:35 #9 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 15:50:35 #10 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 15:50:35 #11 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 15:50:35 #12 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 16:11:48 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 5284@DESKTOP-D1FDVAS
+
+[2022-05-22 16:11:48 #2 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 16:11:48 #3 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 16:11:48 #4 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 16:11:48 #5 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 16:11:48 #6 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 16:11:48 #7 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 16:11:48 #8 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 16:11:48 #9 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 16:11:48 #10 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 16:11:48 #11 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 16:12:05 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 18280@DESKTOP-D1FDVAS
+
+[2022-05-22 16:12:06 #2 type.registry] 
+New type domain.Competicion
+
+[2022-05-22 16:12:06 #3 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 16:12:06 #4 type.registry] 
+New type domain.Actor
+
+[2022-05-22 16:12:06 #5 type.registry] 
+New type domain.Evento
+
+[2022-05-22 16:12:06 #6 type.registry] 
+New type java.util.Vector<domain.Evento>
+
+[2022-05-22 16:12:06 #7 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 16:12:06 #8 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 16:12:06 #9 type.registry] 
+New type domain.Pregunta
+
+[2022-05-22 16:12:06 #10 type.registry] 
+New type java.util.Vector<domain.Pregunta>
+
+[2022-05-22 16:12:06 #11 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 16:12:06 #12 type.registry] 
+New type domain.Pronostico
+
+[2022-05-22 16:12:06 #13 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-05-22 16:12:06 #14 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 16:12:06 #15 type.registry] 
+New type domain.Administrador
+
+[2022-05-22 16:12:06 #16 type.registry] 
+New type domain.Apuesta
+
+[2022-05-22 16:12:06 #17 type.registry] 
+New type java.util.Vector<domain.Apuesta>
+
+[2022-05-22 16:12:06 #18 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 16:12:06 #19 type.registry] 
+New type java.util.ArrayList<domain.Competicion>
+
+[2022-05-22 16:12:06 #20 type.registry] 
+New type java.util.ArrayList<domain.Evento>
+
+[2022-05-22 16:12:06 #21 type.registry] 
+New type java.util.ArrayList<domain.Pregunta>
+
+[2022-05-22 16:12:06 #22 type.registry] 
+New type java.util.ArrayList<domain.Pronostico>
+
+[2022-05-22 16:12:06 #23 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 16:12:06 #24 type.registry] 
+New type java.util.Date[]
+
+[2022-05-22 16:12:06 #25 type.registry] 
+New type double[]
+
+[2022-05-22 16:12:06 #26 type.registry] 
+New type domain.Usuario
+
+[2022-05-22 16:12:06 #27 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 16:12:06 #28 type.registry] 
+New type java.util.ArrayList<java.lang.String>
+
+[2022-05-22 16:12:06 #29 type.registry] 
+New type domain.InformeError
+
+[2022-05-22 16:12:06 #30 type.registry] 
+New type java.util.ArrayList<domain.InformeError>
+
+[2022-05-22 16:12:06 #31 type.registry] 
+New type domain.Promocion
+
+[2022-05-22 16:12:06 #32 type.registry] 
+New type java.util.ArrayList<domain.Promocion>
+
+[2022-05-22 16:12:06 #33 type.registry] 
+New type java.util.ArrayList<domain.Apuesta>
+
+[2022-05-22 16:12:06 #34 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 16:12:06 #35 type] 
+Type domain.Promocion is not enhanced.
+
+[2022-05-22 16:12:06 #36 type.registry] 
+New type java.util.ArrayList<domain.Usuario>
+
+[2022-05-22 16:12:06 #37 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2022-05-22 16:12:06 #38 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 16:12:13 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' has been recovered (tr. 1-6)
+
+[2022-05-22 16:12:13 #2 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 16064@DESKTOP-D1FDVAS
+
+[2022-05-22 16:12:14 #3 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 16:12:14 #4 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 16:12:14 #5 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 16:12:14 #6 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 16:12:14 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 16:12:14 #8 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 16:12:14 #9 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 16:12:14 #10 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 16:12:14 #11 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 16:12:14 #12 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 17:00:57 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 7068@DESKTOP-D1FDVAS
+
+[2022-05-22 17:00:57 #2 type.registry] 
+New type domain.Competicion
+
+[2022-05-22 17:00:57 #3 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 17:00:57 #4 type.registry] 
+New type domain.Actor
+
+[2022-05-22 17:00:57 #5 type.registry] 
+New type domain.Evento
+
+[2022-05-22 17:00:57 #6 type.registry] 
+New type java.util.Vector<domain.Evento>
+
+[2022-05-22 17:00:57 #7 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 17:00:57 #8 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 17:00:57 #9 type.registry] 
+New type domain.Pregunta
+
+[2022-05-22 17:00:57 #10 type.registry] 
+New type java.util.Vector<domain.Pregunta>
+
+[2022-05-22 17:00:57 #11 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 17:00:57 #12 type.registry] 
+New type domain.Pronostico
+
+[2022-05-22 17:00:57 #13 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-05-22 17:00:57 #14 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 17:00:57 #15 type.registry] 
+New type domain.Administrador
+
+[2022-05-22 17:00:57 #16 type.registry] 
+New type domain.Apuesta
+
+[2022-05-22 17:00:57 #17 type.registry] 
+New type java.util.Vector<domain.Apuesta>
+
+[2022-05-22 17:00:57 #18 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 17:00:57 #19 type.registry] 
+New type java.util.ArrayList<domain.Competicion>
+
+[2022-05-22 17:00:57 #20 type.registry] 
+New type java.util.ArrayList<domain.Evento>
+
+[2022-05-22 17:00:57 #21 type.registry] 
+New type java.util.ArrayList<domain.Pregunta>
+
+[2022-05-22 17:00:57 #22 type.registry] 
+New type java.util.ArrayList<domain.Pronostico>
+
+[2022-05-22 17:00:57 #23 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 17:00:57 #24 type.registry] 
+New type java.util.Date[]
+
+[2022-05-22 17:00:57 #25 type.registry] 
+New type double[]
+
+[2022-05-22 17:00:57 #26 type.registry] 
+New type domain.Usuario
+
+[2022-05-22 17:00:57 #27 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 17:00:57 #28 type.registry] 
+New type java.util.ArrayList<java.lang.String>
+
+[2022-05-22 17:00:57 #29 type.registry] 
+New type domain.InformeError
+
+[2022-05-22 17:00:57 #30 type.registry] 
+New type java.util.ArrayList<domain.InformeError>
+
+[2022-05-22 17:00:57 #31 type.registry] 
+New type domain.Promocion
+
+[2022-05-22 17:00:57 #32 type.registry] 
+New type java.util.ArrayList<domain.Promocion>
+
+[2022-05-22 17:00:57 #33 type.registry] 
+New type java.util.ArrayList<domain.Apuesta>
+
+[2022-05-22 17:00:57 #34 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 17:00:57 #35 type] 
+Type domain.Promocion is not enhanced.
+
+[2022-05-22 17:00:57 #36 type.registry] 
+New type java.util.ArrayList<domain.Usuario>
+
+[2022-05-22 17:00:57 #37 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2022-05-22 17:00:57 #38 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 17:01:03 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' has been recovered (tr. 1-6)
+
+[2022-05-22 17:01:03 #2 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 9060@DESKTOP-D1FDVAS
+
+[2022-05-22 17:01:03 #3 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 17:01:03 #4 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 17:01:03 #5 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 17:01:03 #6 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 17:01:03 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 17:01:03 #8 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 17:01:03 #9 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 17:01:03 #10 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 17:01:03 #11 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 17:01:03 #12 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 17:03:11 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' has been recovered (tr. 7-12)
+
+[2022-05-22 17:03:11 #2 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 22696@DESKTOP-D1FDVAS
+
+[2022-05-22 17:03:11 #3 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 17:03:11 #4 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 17:03:11 #5 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 17:03:11 #6 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 17:03:11 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 17:03:11 #8 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 17:03:11 #9 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 17:03:11 #10 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 17:03:11 #11 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 17:03:11 #12 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 17:14:18 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 10272@DESKTOP-D1FDVAS
+
+[2022-05-22 17:14:18 #2 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 17:14:18 #3 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 17:14:18 #4 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 17:14:18 #5 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 17:14:18 #6 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 17:14:18 #7 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 17:14:18 #8 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 17:14:18 #9 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 17:14:18 #10 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 17:14:18 #11 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 17:17:04 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 7196@DESKTOP-D1FDVAS
+
+[2022-05-22 17:17:04 #2 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 17:17:04 #3 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 17:17:04 #4 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 17:17:04 #5 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 17:17:04 #6 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 17:17:04 #7 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 17:17:04 #8 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 17:17:04 #9 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 17:17:04 #10 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 17:17:04 #11 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 17:18:35 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 21524@DESKTOP-D1FDVAS
+
+[2022-05-22 17:18:35 #2 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 17:18:35 #3 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 17:18:35 #4 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 17:18:35 #5 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 17:18:35 #6 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 17:18:35 #7 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 17:18:35 #8 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 17:18:35 #9 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 17:18:35 #10 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 17:18:35 #11 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 17:19:03 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 9720@DESKTOP-D1FDVAS
+
+[2022-05-22 17:19:03 #2 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 17:19:03 #3 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 17:19:03 #4 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 17:19:03 #5 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 17:19:03 #6 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 17:19:03 #7 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 17:19:03 #8 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 17:19:03 #9 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 17:19:03 #10 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 17:19:03 #11 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 17:21:21 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 2236@DESKTOP-D1FDVAS
+
+[2022-05-22 17:21:21 #2 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 17:21:21 #3 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 17:21:21 #4 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 17:21:21 #5 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 17:21:21 #6 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 17:21:21 #7 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 17:21:21 #8 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 17:21:21 #9 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 17:21:21 #10 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 17:21:21 #11 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 17:22:28 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 11684@DESKTOP-D1FDVAS
+
+[2022-05-22 17:22:28 #2 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 17:22:28 #3 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 17:22:28 #4 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 17:22:28 #5 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 17:22:28 #6 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 17:22:28 #7 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 17:22:28 #8 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 17:22:28 #9 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 17:22:28 #10 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 17:22:28 #11 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 17:25:31 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 7980@DESKTOP-D1FDVAS
+
+[2022-05-22 17:25:31 #2 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 17:25:31 #3 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 17:25:31 #4 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 17:25:31 #5 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 17:25:31 #6 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 17:25:31 #7 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 17:25:31 #8 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 17:25:31 #9 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 17:25:31 #10 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 17:25:31 #11 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 17:26:45 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 21376@DESKTOP-D1FDVAS
+
+[2022-05-22 17:26:45 #2 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 17:26:45 #3 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 17:26:45 #4 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 17:26:45 #5 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 17:26:45 #6 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 17:26:45 #7 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 17:26:45 #8 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 17:26:45 #9 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 17:26:45 #10 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 17:26:45 #11 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 17:35:48 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 24424@DESKTOP-D1FDVAS
+
+[2022-05-22 17:35:48 #2 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 17:35:48 #3 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 17:35:48 #4 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 17:35:48 #5 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 17:35:48 #6 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 17:35:48 #7 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 17:35:48 #8 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 17:35:48 #9 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 17:35:48 #10 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 17:35:48 #11 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 17:39:19 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' has been recovered (tr. 13-15)
+
+[2022-05-22 17:39:19 #2 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 19944@DESKTOP-D1FDVAS
+
+[2022-05-22 17:39:19 #3 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 17:39:19 #4 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 17:39:19 #5 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 17:39:19 #6 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 17:39:19 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 17:39:19 #8 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 17:39:19 #9 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 17:39:19 #10 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 17:39:19 #11 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 17:39:19 #12 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 17:40:20 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 17576@DESKTOP-D1FDVAS
+
+[2022-05-22 17:40:20 #2 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 17:40:20 #3 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 17:40:20 #4 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 17:40:20 #5 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 17:40:20 #6 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 17:40:20 #7 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 17:40:20 #8 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 17:40:20 #9 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 17:40:20 #10 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 17:40:20 #11 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 17:47:09 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 2384@DESKTOP-D1FDVAS
+
+[2022-05-22 17:47:09 #2 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 17:47:09 #3 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 17:47:09 #4 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 17:47:09 #5 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 17:47:09 #6 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 17:47:09 #7 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 17:47:09 #8 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 17:47:09 #9 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 17:47:09 #10 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 17:47:09 #11 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 17:47:44 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 8092@DESKTOP-D1FDVAS
+
+[2022-05-22 17:47:44 #2 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 17:47:44 #3 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 17:47:44 #4 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 17:47:44 #5 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 17:47:44 #6 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 17:47:44 #7 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 17:47:44 #8 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 17:47:44 #9 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 17:47:44 #10 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 17:47:44 #11 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 17:49:37 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 9664@DESKTOP-D1FDVAS
+
+[2022-05-22 17:49:37 #2 type.registry] 
+New type domain.Competicion
+
+[2022-05-22 17:49:37 #3 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 17:49:37 #4 type.registry] 
+New type domain.Actor
+
+[2022-05-22 17:49:37 #5 type.registry] 
+New type domain.Evento
+
+[2022-05-22 17:49:37 #6 type.registry] 
+New type java.util.Vector<domain.Evento>
+
+[2022-05-22 17:49:37 #7 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 17:49:37 #8 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 17:49:37 #9 type.registry] 
+New type domain.Pregunta
+
+[2022-05-22 17:49:37 #10 type.registry] 
+New type java.util.Vector<domain.Pregunta>
+
+[2022-05-22 17:49:37 #11 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 17:49:37 #12 type.registry] 
+New type domain.Pronostico
+
+[2022-05-22 17:49:37 #13 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-05-22 17:49:37 #14 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 17:49:37 #15 type.registry] 
+New type domain.Administrador
+
+[2022-05-22 17:49:37 #16 type.registry] 
+New type domain.Apuesta
+
+[2022-05-22 17:49:37 #17 type.registry] 
+New type java.util.Vector<domain.Apuesta>
+
+[2022-05-22 17:49:37 #18 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 17:49:37 #19 type.registry] 
+New type java.util.ArrayList<domain.Competicion>
+
+[2022-05-22 17:49:37 #20 type.registry] 
+New type java.util.ArrayList<domain.Evento>
+
+[2022-05-22 17:49:37 #21 type.registry] 
+New type java.util.ArrayList<domain.Pregunta>
+
+[2022-05-22 17:49:37 #22 type.registry] 
+New type java.util.ArrayList<domain.Pronostico>
+
+[2022-05-22 17:49:37 #23 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 17:49:37 #24 type.registry] 
+New type java.util.Date[]
+
+[2022-05-22 17:49:37 #25 type.registry] 
+New type double[]
+
+[2022-05-22 17:49:37 #26 type.registry] 
+New type domain.Usuario
+
+[2022-05-22 17:49:37 #27 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 17:49:37 #28 type.registry] 
+New type java.util.ArrayList<java.lang.String>
+
+[2022-05-22 17:49:37 #29 type.registry] 
+New type domain.InformeError
+
+[2022-05-22 17:49:37 #30 type.registry] 
+New type java.util.ArrayList<domain.InformeError>
+
+[2022-05-22 17:49:37 #31 type.registry] 
+New type domain.Promocion
+
+[2022-05-22 17:49:37 #32 type.registry] 
+New type java.util.ArrayList<domain.Promocion>
+
+[2022-05-22 17:49:37 #33 type.registry] 
+New type java.util.ArrayList<domain.Apuesta>
+
+[2022-05-22 17:49:37 #34 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 17:49:37 #35 type] 
+Type domain.Promocion is not enhanced.
+
+[2022-05-22 17:49:37 #36 type.registry] 
+New type java.util.ArrayList<domain.Usuario>
+
+[2022-05-22 17:49:37 #37 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2022-05-22 17:49:37 #38 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 17:49:43 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' has been recovered (tr. 1-6)
+
+[2022-05-22 17:49:43 #2 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 20988@DESKTOP-D1FDVAS
+
+[2022-05-22 17:49:43 #3 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 17:49:43 #4 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 17:49:43 #5 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 17:49:43 #6 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 17:49:43 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 17:49:43 #8 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 17:49:43 #9 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 17:49:43 #10 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 17:49:43 #11 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 17:49:43 #12 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 17:57:32 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' has been recovered (tr. 7-21)
+
+[2022-05-22 17:57:32 #2 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 16884@DESKTOP-D1FDVAS
+
+[2022-05-22 17:57:32 #3 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 17:57:32 #4 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 17:57:32 #5 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 17:57:32 #6 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 17:57:32 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 17:57:32 #8 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 17:57:32 #9 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 17:57:32 #10 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 17:57:32 #11 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 17:57:32 #12 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-22 17:59:05 #1 store] 
+Database 'C:\Users\Usuario\git\RepositorioBets22-It3\Bets21\src\main\resources\bets.temp' is opened by 22240@DESKTOP-D1FDVAS
+
+[2022-05-22 17:59:05 #2 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-05-22 17:59:05 #3 type] 
+Type domain.Actor is not enhanced.
+
+[2022-05-22 17:59:05 #4 type] 
+Type domain.Evento is not enhanced.
+
+[2022-05-22 17:59:05 #5 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-05-22 17:59:05 #6 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-22 17:59:05 #7 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-05-22 17:59:05 #8 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-05-22 17:59:05 #9 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-22 17:59:05 #10 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-05-22 17:59:05 #11 type] 
+Type domain.Promocion is not enhanced.
+
