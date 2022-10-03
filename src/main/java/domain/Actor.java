@@ -4,7 +4,7 @@ import java.util.Date;
 
 import javax.persistence.*;
 /**
- * Una clase abstracta para definir un actor en la aplicación.
+ * Una clase abstracta para definir un actor en la aplicaciï¿½n.
  * @author Markel Barrena.
  * 05/03/2022
  */
@@ -24,7 +24,9 @@ public abstract class Actor {
 	private String email;
 	private String numTel;
 	
-	public Actor(String nombreUsuario, String DNI, String nombre, String apellido1, String apellido2, Date fechaN, String pswd, char Sexo, String email, String numTel) {
+	public Actor(String nombreUsuario, 
+			String DNI, String nombre, String apellido1,
+			String apellido2, Date fechaN, String pswd, char Sexo, String email, String numTel) {
 		this.nombreUsuario= nombreUsuario;
 		this.DNI= DNI;
 		this.nombre= nombre;
@@ -74,8 +76,8 @@ public abstract class Actor {
 		return pswd;
 	}
 	
-	public void setPswd(String contraseña) {
-		this.pswd = contraseña;
+	public void setPswd(String contraseï¿½a) {
+		this.pswd = contraseï¿½a;
 	}
 	
 	public char getSexo() {
@@ -117,8 +119,8 @@ public abstract class Actor {
 	}
 	
 	/**
-	 * Verifica que la contraseña entrante coincide con la del usuario.
-	 * @param pswd la contraseña entrante.
+	 * Verifica que la contraseï¿½a entrante coincide con la del usuario.
+	 * @param pswd la contraseï¿½a entrante.
 	 * @return true si coincide.
 	 */
 	public boolean checkPswd(String pswd) {
@@ -127,12 +129,12 @@ public abstract class Actor {
 	}
 	
 	/**
-	 * Devuelve la información del usuario en un string.
+	 * Devuelve la informaciï¿½n del usuario en un string.
 	 */
 	public String toString() {
 		return (this.getNombreUsuario()+": "+this.getNombre()+", "+this.getApellido1()+", "+this.getApellido2()+
 				".\n\tDni: "+this.getDNI()+"\n\tFecha de nacimiento: "+this.getFechaN().toString()+"\n\tEmail: "+
-				this.getEmail()+"\n\tNúmero de teléfono: "+this.getNumTel()+"\n");
+				this.getEmail()+"\n\tNï¿½mero de telï¿½fono: "+this.getNumTel()+"\n");
 	}
 
 }

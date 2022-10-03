@@ -4,25 +4,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import javax.persistence.*;
 /**
- * Información de un administrador de la aplicación.
+ * Informaciï¿½n de un administrador de la aplicaciï¿½n.
  * @author Markel Barrena.
  * 05/03/2022
  */
 
 @Entity
 public class Administrador extends Actor{
-	/*
-	@Id
-	private String nombreUsuario; //nick del usuario.
-	private String DNI;
-	private String nombre;
-	private String apellido1;
-	private String apellido2;
-	private Date fechaN; //fecha de nacimiento.
-	private String pswd;
-	private char sexo; //M, F, O.
-	private String email;
-	private String numTel;*/
+
 	@OneToMany
 	private ArrayList<Pronostico> pronosticos; //pronosticos formulados por el administrador.
 	@OneToMany
@@ -32,95 +21,19 @@ public class Administrador extends Actor{
 	@OneToMany
 	private ArrayList<Competicion> competiciones; //competiciones creadas por el administrador.
 	
-	public Administrador(String nombreUsuario, String DNI, String nombre, String apellido1, String apellido2, Date fechaN, String pswd, char Sexo, String email, String numTel) {
+	public Administrador(String nombreUsuario, 
+			String DNI, String nombre, String apellido1,
+			String apellido2, Date fechaN, String pswd, char Sexo, String email, String numTel) {
 	
 		super(nombreUsuario,  DNI,  nombre,  apellido1,  apellido2,  fechaN,  pswd,  Sexo,  email,  numTel);
-/*
-		this.nombreUsuario= nombreUsuario;
-		this.DNI= DNI;
-		this.nombre= nombre;
-		this.apellido1= apellido1;
-		this.apellido2= apellido2;
-		this.fechaN= fechaN;
-		this.pswd= pswd;
-		this.email= email;
-		this.numTel= numTel;*/
+
 		this.competiciones = new ArrayList<Competicion>();
 		this.eventos = new ArrayList<Evento>();
 		this.preguntas = new ArrayList<Pregunta>();
 		this.pronosticos = new ArrayList<Pronostico>();	
 	}
 	
-	//getters y setters:
-	/*
-	public String getNombreUsuario() {
-		return this.nombreUsuario;
-	}
-	
-	public String getDNI() {
-		return this.DNI;
-	}
-	
-	public String getNombre() {
-		return nombre;
-	}
-	
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	
-	public String getApellido1() {
-		return apellido1;
-	}
-	
-	public void setApellido1(String apellido1) {
-		this.apellido1 = apellido1;
-	}
-	
-	public String getApellido2() {
-		return apellido2;
-	}
-	
-	public void setApellido2(String apellido2) {
-		this.apellido2 = apellido2;
-	}
-	
-	public String getPswd() {
-		return pswd;
-	}
-	
-	public void setPswd(String contraseña) {
-		this.pswd = contraseña;
-	}
-	
-	public char getSexo() {
-		return sexo;
-	}
-	
-	public void setSexo(char sexo) {
-		this.sexo = sexo;
-	}
-	
-	public String getEmail() {
-		return email;
-	}
-	
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	
-	public Date getFechaN() {
-		return this.fechaN;
-	}
-	
-	public String getNumTel() {
-		return this.numTel;
-	}
-	
-	public void setNumTel(String numTel) {
-		this.numTel= numTel;
-	}
-	*/
+
 	public ArrayList<Pronostico> getPronosticos() {
 		return pronosticos;
 	}
@@ -168,28 +81,30 @@ public class Administrador extends Actor{
 
 	
 	/**
-	 * Devuelve el pronóstico que coincida con la respuesta de entrada.
-	 * @param respuesta la respuesta del pronóstico a buscar.
-	 * @return el pronóstico con el mismo enunciado.
+	 * Devuelve el pronï¿½stico que coincida con la respuesta de entrada.
+	 * @param respuesta la respuesta del pronï¿½stico a buscar.
+	 * @return el pronï¿½stico con el mismo enunciado.
 	 */
 	public Pronostico buscarPronosticoPorRespuesta(String respuesta) {
 		for(Pronostico p: pronosticos) {
-			if(p.getRespuesta().equals(respuesta)) return p;
+			if(p.getRespuesta().equals(respuesta)) {
+				return p;
+			}
 		}
 		return null;
 	}
 	
 	/**
-	 * Añade un pronóstico a la lista de pronósticos creados por el administrador.
-	 * @param pronóstico el pronóstico a añadir.
+	 * Aï¿½ade un pronï¿½stico a la lista de pronï¿½sticos creados por el administrador.
+	 * @param pronï¿½stico el pronï¿½stico a aï¿½adir.
 	 */
 	public void anadirPronostico(Pronostico pronostico) {
 		pronosticos.add(pronostico);
 	}
 	
 	/**
-	 * Elimina el pronóstico de entrada.
-	 * @param pronostico el pronóstico a eliminar.
+	 * Elimina el pronï¿½stico de entrada.
+	 * @param pronostico el pronï¿½stico a eliminar.
 	 */
 	public void eliminarPronostico(Pronostico pronostico) {
 		pronosticos.remove(pronostico);
@@ -202,14 +117,16 @@ public class Administrador extends Actor{
 	 */
 	public Pregunta buscarPreguntaPorEnunciado(String enunciado) {
 		for(Pregunta p: preguntas) {
-			if(p.getEnunciado().equals(enunciado)) return p;
+			if(p.getEnunciado().equals(enunciado)) {
+				return p;
+			}
 		}
 		return null;
 	}
 	
 	/**
-	 * Añade una pregunta a la lista de preguntas creadas por el administrador..
-	 * @param pregunta la pregunta a añadir.
+	 * Aï¿½ade una pregunta a la lista de preguntas creadas por el administrador..
+	 * @param pregunta la pregunta a aï¿½adir.
 	 */
 	public void anadirPregunta(Pregunta pregunta) {
 		preguntas.add(pregunta);
@@ -230,35 +147,39 @@ public class Administrador extends Actor{
 	 */
 	public Evento buscarEventoPorNombre(String nombre) {
 		for(Evento e: eventos) {
-			if(e.getNombre().equals(nombre)) return e;
+			if(e.getNombre().equals(nombre)) {
+				return e;
+			}
 		}
 		return null;
 	}
 	
 	/**
-	 * Añade un evento a la lista de eventos creados por el administrador.
-	 * @param evento el evento a añadir.
+	 * Aï¿½ade un evento a la lista de eventos creados por el administrador.
+	 * @param evento el evento a aï¿½adir.
 	 */
 	public void anadirEvento(Evento evento) {
 		this.eventos.add(evento);
 	}
 	
 	/**
-	 * Devuelve la competición con el id que se introduce.
-	 * @param nombre(String): el nombre de la competición a buscar.
-	 * @return la competición de la bd que tenga ese nombre.
+	 * Devuelve la competiciï¿½n con el id que se introduce.
+	 * @param nombre(String): el nombre de la competiciï¿½n a buscar.
+	 * @return la competiciï¿½n de la bd que tenga ese nombre.
 	 */
 	public Competicion buscarCompeticionPorId(String nombre) {
 		
 		for(Competicion c: competiciones) {
-			if(c.getNombre().equals(nombre)) return c;
+			if(c.getNombre().equals(nombre)) {
+				return c;
+			}
 		}
 		return null;
 	}
 	
 	/**
-	 * Añade una competición a la lista de competiciones creadas por el administrador.
-	 * @param competicion la competicion a añadir.
+	 * Aï¿½ade una competiciï¿½n a la lista de competiciones creadas por el administrador.
+	 * @param competicion la competicion a aï¿½adir.
 	 */
 	public void anadirCompeticion(Competicion competicion) {
 		this.competiciones.add(competicion);
