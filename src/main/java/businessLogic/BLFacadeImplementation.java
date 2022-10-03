@@ -28,13 +28,14 @@ import gui.IniciarSesionGUI;
 public class BLFacadeImplementation  implements BLFacade {
 
 	DataAccess dbManager;
+	final static String ini = "initialize";
 
 	public BLFacadeImplementation()  {		
 		System.out.println("Creating BLFacadeImplementation instance");
 		ConfigXML c=ConfigXML.getInstance();
 
-		if (c.getDataBaseOpenMode().equals("initialize")) {
-			dbManager=new DataAccess(c.getDataBaseOpenMode().equals("initialize"));
+		if (c.getDataBaseOpenMode().equals(ini)) {
+			dbManager=new DataAccess(c.getDataBaseOpenMode().equals(ini));
 			dbManager.initializeDB();
 		} else
 			dbManager=new DataAccess();
@@ -48,7 +49,7 @@ public class BLFacadeImplementation  implements BLFacade {
 		System.out.println("Creating BLFacadeImplementation instance with DataAccess parameter");
 		ConfigXML c=ConfigXML.getInstance();
 
-		if (c.getDataBaseOpenMode().equals("initialize")) {
+		if (c.getDataBaseOpenMode().equals(ini)) {
 			da.open(true);
 			da.initializeDB();
 			da.close();
@@ -79,7 +80,7 @@ public class BLFacadeImplementation  implements BLFacade {
 	public int registrarUsuario(String id, String DNI, String Nombre, String Apellido1, String Apellido2, Date fechaN, String contrasena, char sexo, String email,String tlfn, boolean admin) {
 
 
-		//TODO Vidal- Falta comprobar la validez del nº de telefono y email, si es que se va a hacer
+		//TODO Vidal- Falta comprobar la validez del nï¿½ de telefono y email, si es que se va a hacer
 
 		//Solo se comprueba que este correcta la fecha, que el usuario no exista, y que el saldo sea positivo.
 		dbManager.open(false);
@@ -90,7 +91,7 @@ public class BLFacadeImplementation  implements BLFacade {
 		if (dbManager.actorExistente(id)) {
 
 			dbManager.close();
-			return 1; //El usuario que intenta añadir ya existe
+			return 1; //El usuario que intenta aï¿½adir ya existe
 		}
 		else 
 
@@ -131,7 +132,7 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.open(false);
 		if (dbManager.actorExistente(id)) {
 			dbManager.close();
-			return 1; //El usuario que intenta añadir ya existe
+			return 1; //El usuario que intenta aï¿½adir ya existe
 		}
 		else if (fechaN.before(fechaN)) {
 			dbManager.close();
@@ -155,7 +156,7 @@ public class BLFacadeImplementation  implements BLFacade {
 	 * @param genero
 	 * @param temporada
 	 * @param descripcion
-	 * @return 1: La competicion esta añadida; 0: Todo ok
+	 * @return 1: La competicion esta aï¿½adida; 0: Todo ok
 	 */
 
 	public Competicion crearCompeticion(String nombre, String deporte, char genero, String temporada, String descripcion, Actor admin) {
@@ -166,7 +167,7 @@ public class BLFacadeImplementation  implements BLFacade {
 		if (!dbManager.existeCompeticion("Competicion:" + nombre)) {
 			competicion = dbManager.crearCompeticion(nombre, deporte, genero, temporada, descripcion, admin);
 		}
-		//Si la competicion ya está añadida.
+		//Si la competicion ya estï¿½ aï¿½adida.
 		dbManager.close();
 		return competicion;
 	}
@@ -177,7 +178,7 @@ public class BLFacadeImplementation  implements BLFacade {
 	 * @param nombre
 	 * @param fecha
 	 * @param comp
-	 * @return 1:  El evento es un acontecimiento que ya ha pasado.; 2:El evento que queremos añadir ya existe; 0: Todo ok
+	 * @return 1:  El evento es un acontecimiento que ya ha pasado.; 2:El evento que queremos aï¿½adir ya existe; 0: Todo ok
 	 * @throws EventoNoExistenteException 
 	 */
 	public int crearEvento(String nombre, Date fecha, Competicion comp, String descripcion, Actor admin) throws EventoNoExistenteException {
@@ -186,7 +187,7 @@ public class BLFacadeImplementation  implements BLFacade {
 
 		Date now = new Date();
 		if (fecha.before(now)) return 1; //Queremos crear un evento en un acontecimiento ya pasado.
-		else if (dbManager.existeEvento(nombre, fecha, comp)) return 2; //El evento que queremos añadir ya existe.
+		else if (dbManager.existeEvento(nombre, fecha, comp)) return 2; //El evento que queremos aï¿½adir ya existe.
 		else {
 			dbManager.crearEvento(nombre, fecha, comp, descripcion, admin);
 		}
@@ -250,7 +251,7 @@ public class BLFacadeImplementation  implements BLFacade {
 	public int crearApuesta(Pronostico pronostico, Usuario usuario, double cantidad) { 
 		
 		dbManager.open(false);
-		if (!this.existeApuesta(pronostico.getId()+"_"+usuario.getNombreUsuario())) { //comprobacion de existenca //TODO Comprobar que la apuesta es mayor a la apuesta mínima.
+		if (!this.existeApuesta(pronostico.getId()+"_"+usuario.getNombreUsuario())) { //comprobacion de existenca //TODO Comprobar que la apuesta es mayor a la apuesta mï¿½nima.
 			switch(dbManager.crearApuesta(pronostico, usuario, cantidad)) {
 			case 0:
 				dbManager.close();
@@ -362,7 +363,7 @@ public class BLFacadeImplementation  implements BLFacade {
 	 * 
 	 * @param user El usuario del cual queremos combrobar la contrasena
 	 * @param pwd La contrasena qie debemos comprobar
-	 * @return 0: Si el nombre de usuario no esta registrado; 1: La pwd es correcta y es user; 2: La pwd es correcta y es admin; 3: contraseña erronea
+	 * @return 0: Si el nombre de usuario no esta registrado; 1: La pwd es correcta y es user; 2: La pwd es correcta y es admin; 3: contraseï¿½a erronea
 	 */
 	public int comprobarContrasena (String user, String pwd) {
 
@@ -382,7 +383,7 @@ public class BLFacadeImplementation  implements BLFacade {
 				}
 			}
 			else
-				return 3; //si no coinciden nombre y contraseña
+				return 3; //si no coinciden nombre y contraseï¿½a
 		}
 		dbManager.close();
 		return 0; //0 si el nombre de usuario no esta registrado
@@ -392,10 +393,10 @@ public class BLFacadeImplementation  implements BLFacade {
 	/**
 	 * TODO para ander: anadir descripcion del metodo -agus
 	 * 
-	 * @param OGpwd La contraseña original
-	 * @param newPwd La contraseña nueva
-	 * @param newPwd2 La contraseña nueva repetida
-	 * @return 0: Contraseña cambiada satisfactoriamente; 1: Si la OGPwd esta mal; 2: Si las contraseñas nuevas son distintas; 3: Algo salga mal
+	 * @param OGpwd La contraseï¿½a original
+	 * @param newPwd La contraseï¿½a nueva
+	 * @param newPwd2 La contraseï¿½a nueva repetida
+	 * @return 0: Contraseï¿½a cambiada satisfactoriamente; 1: Si la OGPwd esta mal; 2: Si las contraseï¿½as nuevas son distintas; 3: Algo salga mal
 	 */
 	public boolean cambiarContrasena (String nombreUsuario, String nuevaContrasena) {
 		
@@ -447,7 +448,7 @@ public class BLFacadeImplementation  implements BLFacade {
 	 * Dada una pregunta devuelve todos los pronosticos asociados a esa pregunta
 	 * 
 	 * @param event El evento del que queremos obtener los pronosticos
-	 * @return La colección de pronosticos del evento pasado como parametro
+	 * @return La colecciï¿½n de pronosticos del evento pasado como parametro
 	 */
 	public Vector<Pronostico> obtenerPronosticosDePregunta (Pregunta p){
 		dbManager.open(false);
@@ -600,7 +601,7 @@ public class BLFacadeImplementation  implements BLFacade {
 
 		Date now = new Date();
 		if (fechaEvento.before(now)) return 1; //Queremos crear un evento en un acontecimiento ya pasado.
-		else if (dbManager.existeEvento(nombreEvento, fechaEvento, competicion)) return 2; //El evento que queremos añadir ya existe.
+		else if (dbManager.existeEvento(nombreEvento, fechaEvento, competicion)) return 2; //El evento que queremos aï¿½adir ya existe.
 		else {
 			dbManager.sugerirEvento(nombreEvento, fechaEvento, competicion, descripcion, user);
 		}
@@ -614,7 +615,7 @@ public class BLFacadeImplementation  implements BLFacade {
 		if (!dbManager.existeCompeticion("Competicion:" + nombre)) {
 			dbManager.sugerirCompeticion(nombre, deporte, genero, temporada, descripcion, user);
 		}
-		//Si la competicion ya está añadida.
+		//Si la competicion ya estï¿½ aï¿½adida.
 		dbManager.close();
 	}
 
@@ -628,7 +629,7 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.close();
 	}
 
-	//devuelve 1 si existe el un informe con el mismo título, 0 si se ha añadido correctamente.
+	//devuelve 1 si existe el un informe con el mismo tï¿½tulo, 0 si se ha aï¿½adido correctamente.
 	public void informarError(String titulo, String descripcion, Usuario usuario) {
 		dbManager.open(false);
 		dbManager.informarError(titulo, descripcion, usuario);
