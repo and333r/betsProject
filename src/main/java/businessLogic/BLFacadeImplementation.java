@@ -80,9 +80,6 @@ public class BLFacadeImplementation  implements BLFacade {
 	public int registrarUsuario(String id, String DNI, String Nombre, String Apellido1, String Apellido2, Date fechaN, String contrasena, char sexo, String email,String tlfn, boolean admin) {
 
 
-		//TODO Vidal- Falta comprobar la validez del n� de telefono y email, si es que se va a hacer
-
-		//Solo se comprueba que este correcta la fecha, que el usuario no exista, y que el saldo sea positivo.
 		dbManager.open(false);
 
 		Date fechaHoy = UtilDate.currentDate();

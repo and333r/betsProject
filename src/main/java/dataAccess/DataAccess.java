@@ -51,13 +51,13 @@ public class DataAccess  {
 
 			Administrador admin = new Administrador("Admin1", "99999999T", "admin", "a", "b", UtilDate.nuevaFecha(1999, 2, 28), "admin", 'H', "admin@gmail.com", "999999999");
 
-			Competicion LaLigaSantander= new Competicion("La Liga Santander", "Futbol", 'M', "2022-2023", new String(), admin);
+			Competicion laLigaSantander= new Competicion("La Liga Santander", "Futbol", 'M', "2022-2023", new String(), admin);
 
 			Actor usuario1 = new Usuario("Usuario1", "11111111F", "usuario", "primero", "primero", UtilDate.nuevaFecha(2001,10,25), "usuario", 'M', "usuario@gmail.com", "675253642");
 			Actor usuario2 = new Usuario("DemultiplexadosYCompilacionesMartinez", "22222222F", "Paco", "Martinez", "Martinez", UtilDate.nuevaFecha(1975,01,01), "123456", 'M', "DYCM@gmail.com", "675353642");
 
-			Evento ev1 = new Evento("Atl�tico-Athletic", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
-			Evento ev2 = new Evento( "Eibar-Barcelona", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
+			Evento ev1 = new Evento("Atl�tico-Athletic", UtilDate.newDate(year,month,17),laLigaSantander,"", admin);
+			Evento ev2 = new Evento( "Eibar-Barcelona", UtilDate.newDate(year,month,17),laLigaSantander,"", admin);
 			/*			Evento ev3 = new Evento( "Getafe-Celta", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
 			Evento ev4 = new Evento( "Alav�s-Deportivo", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
 			Evento ev5 = new Evento("Espa�ol-Villareal", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
@@ -67,8 +67,8 @@ public class DataAccess  {
 			Evento ev9 = new Evento( "Real Sociedad-Levante", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
 			Evento ev10 = new Evento( "Betis-Real Madrid", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
 			 */
-			LaLigaSantander.anadirEvento(ev1);
-			LaLigaSantander.anadirEvento(ev2);
+			laLigaSantander.anadirEvento(ev1);
+			laLigaSantander.anadirEvento(ev2);
 			/*			LaLigaSantander.anadirEvento(ev3);
 			LaLigaSantander.anadirEvento(ev4);
 			LaLigaSantander.anadirEvento(ev5);
@@ -171,7 +171,7 @@ public class DataAccess  {
 			 */
 
 			//Anadir competiciones
-			db.persist(LaLigaSantander);//
+			db.persist(laLigaSantander);//
 
 			//A�adir usuarios
 			db.persist(usuario1);
