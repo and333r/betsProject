@@ -51,24 +51,24 @@ public class DataAccess  {
 
 			Administrador admin = new Administrador("Admin1", "99999999T", "admin", "a", "b", UtilDate.nuevaFecha(1999, 2, 28), "admin", 'H', "admin@gmail.com", "999999999");
 
-			Competicion LaLigaSantander= new Competicion("La Liga Santander", "Futbol", 'M', "2022-2023", new String(), admin);
+			Competicion laLigaSantander= new Competicion("La Liga Santander", "Futbol", 'M', "2022-2023", new String(), admin);
 
 			Actor usuario1 = new Usuario("Usuario1", "11111111F", "usuario", "primero", "primero", UtilDate.nuevaFecha(2001,10,25), "usuario", 'M', "usuario@gmail.com", "675253642");
 			Actor usuario2 = new Usuario("DemultiplexadosYCompilacionesMartinez", "22222222F", "Paco", "Martinez", "Martinez", UtilDate.nuevaFecha(1975,01,01), "123456", 'M', "DYCM@gmail.com", "675353642");
 
-			Evento ev1 = new Evento("Atlético-Athletic", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
-			Evento ev2 = new Evento( "Eibar-Barcelona", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
+			Evento ev1 = new Evento("Atlï¿½tico-Athletic", UtilDate.newDate(year,month,17),laLigaSantander,"", admin);
+			Evento ev2 = new Evento( "Eibar-Barcelona", UtilDate.newDate(year,month,17),laLigaSantander,"", admin);
 			/*			Evento ev3 = new Evento( "Getafe-Celta", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
-			Evento ev4 = new Evento( "Alavés-Deportivo", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
-			Evento ev5 = new Evento("Español-Villareal", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
+			Evento ev4 = new Evento( "Alavï¿½s-Deportivo", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
+			Evento ev5 = new Evento("Espaï¿½ol-Villareal", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
 			Evento ev6 = new Evento( "Las Palmas-Sevilla", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
 			Evento ev7 = new Evento( "Malaga-Valencia", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
-			Evento ev8 = new Evento("Girona-Leganés", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
+			Evento ev8 = new Evento("Girona-Leganï¿½s", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
 			Evento ev9 = new Evento( "Real Sociedad-Levante", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
 			Evento ev10 = new Evento( "Betis-Real Madrid", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
 			 */
-			LaLigaSantander.anadirEvento(ev1);
-			LaLigaSantander.anadirEvento(ev2);
+			laLigaSantander.anadirEvento(ev1);
+			laLigaSantander.anadirEvento(ev2);
 			/*			LaLigaSantander.anadirEvento(ev3);
 			LaLigaSantander.anadirEvento(ev4);
 			LaLigaSantander.anadirEvento(ev5);
@@ -86,12 +86,12 @@ public class DataAccess  {
 
 
 			if (Locale.getDefault().equals(new Locale("es"))) {
-				p1 = new Pregunta( "¿Quién ganará el partido?",ev1, 3,true, admin);
-				p2 = new Pregunta("¿Quién meterá el primer gol?",ev1, 0,true, admin);
-				p3 = new Pregunta("¿Quién ganará el partido?",ev2, 0,true, admin);
-				//p4 = new Pregunta( "¿Cuantos goles se marcarán?",ev2, 0,true, admin);
-				//p5 = new Pregunta("¿Quién ganará el partido?",ev2, 0,true, admin);
-				p4 = new Pregunta( "¿Habra goles en la primera parte?",ev1, 0,true, admin);
+				p1 = new Pregunta( "ï¿½Quiï¿½n ganarï¿½ el partido?",ev1, 3,true, admin);
+				p2 = new Pregunta("ï¿½Quiï¿½n meterï¿½ el primer gol?",ev1, 0,true, admin);
+				p3 = new Pregunta("ï¿½Quiï¿½n ganarï¿½ el partido?",ev2, 0,true, admin);
+				//p4 = new Pregunta( "ï¿½Cuantos goles se marcarï¿½n?",ev2, 0,true, admin);
+				//p5 = new Pregunta("ï¿½Quiï¿½n ganarï¿½ el partido?",ev2, 0,true, admin);
+				p4 = new Pregunta( "ï¿½Habra goles en la primera parte?",ev1, 0,true, admin);
 			}
 			else if (Locale.getDefault().equals(new Locale("en"))) {
 				p1 = new Pregunta(  "Who will win the match?",ev1, 3,true, admin);
@@ -120,7 +120,7 @@ public class DataAccess  {
 			Pronostico pro7 = new Pronostico("Eibar", p3, 2, admin);
 			Pronostico pro8 = new Pronostico("Barcelona", p3, 1.5, admin);
 			Pronostico pro9 = new Pronostico(ResourceBundle.getBundle("Etiquetas").getString("Empate"), p3, 1.3, admin);
-			Pronostico pro10 = new Pronostico("Sí", p4, 1.5, admin);
+			Pronostico pro10 = new Pronostico("Sï¿½", p4, 1.5, admin);
 			Pronostico pro11 = new Pronostico("No", p4, 10, admin);
 			Pronostico pro12 = new Pronostico("Nc/Ns", p4, 1, admin);
 
@@ -171,9 +171,9 @@ public class DataAccess  {
 			 */
 
 			//Anadir competiciones
-			db.persist(LaLigaSantander);//
+			db.persist(laLigaSantander);//
 
-			//Añadir usuarios
+			//Aï¿½adir usuarios
 			db.persist(usuario1);
 			db.persist(usuario2);
 			db.persist(admin);
@@ -309,17 +309,17 @@ public class DataAccess  {
 	 * Crea y anade a la base de datos un nuevo usuario a la base de datos con los datos introducidos
 	 * 
 	 * @param sexo (char): Masculino = 'M'; Femenino = 'F'; Otro = 'O'
-	 * @param admin :si es true está registrando un administrador.
+	 * @param admin :si es true estï¿½ registrando un administrador.
 	 */
 	public void registrarUsuario(String nombreUsuario, String Dni, String nombre, String apellido1, String apellido2, Date fechaNacimiento, String contrasena, char sexo, String email,String tlfn, boolean admin) {
 
 		db.getTransaction().begin();
 
-		if(!admin) { //se añade un usuario
+		if(!admin) { //se aï¿½ade un usuario
 			Actor a = new Usuario(nombreUsuario,Dni,nombre,apellido1,apellido2,fechaNacimiento,contrasena,sexo,email,tlfn);
 			db.persist(a);
 		}
-		else { //se añade un administrador
+		else { //se aï¿½ade un administrador
 			Actor a = new Administrador(nombreUsuario,Dni,nombre,apellido1,apellido2,fechaNacimiento,contrasena,sexo,email,tlfn);
 			db.persist(a);
 		}
@@ -328,7 +328,7 @@ public class DataAccess  {
 	}
 
 	/**
-	 * Crea y añade a la base de datos un nuevo administrador con los datos introducidos
+	 * Crea y aï¿½ade a la base de datos un nuevo administrador con los datos introducidos
 	 * 
 	 * @param sexo (char): Masculino = 'M'; Femenino = 'F'; Otro = 'O'
 	 */
@@ -365,11 +365,11 @@ public class DataAccess  {
 		return a != null;
 	}
 	/**
-	 * Compruba que una contraseña dada concide con la registrada al usuario dado
+	 * Compruba que una contraseï¿½a dada concide con la registrada al usuario dado
 	 * 
-	 * @param user Usuario al que realizar la comprobacion de contraseña
-	 * @param password Contraseña a comprobar
-	 * @return TRUE si la contraseña dada coincide con la asociada, FALSE si no
+	 * @param user Usuario al que realizar la comprobacion de contraseï¿½a
+	 * @param password Contraseï¿½a a comprobar
+	 * @return TRUE si la contraseï¿½a dada coincide con la asociada, FALSE si no
 	 */
 	public boolean comprobarContrasena(String user, String password) {
 
@@ -435,7 +435,7 @@ public class DataAccess  {
 	}
 
 	/**
-	 * Crea y añade una nueva competicion
+	 * Crea y aï¿½ade una nueva competicion
 	 * 
 	 * @param id
 	 * @param nombre
@@ -465,7 +465,7 @@ public class DataAccess  {
 		Competicion competicion = this.db.find(Competicion.class, comp.getId());
 
 		Evento evento = new Evento(nombre, fecha, competicion,descripcion, admin0);
-		//evento.getComp().anadirEvento(evento); //esto en vez de añadir el evento en la constructora.
+		//evento.getComp().anadirEvento(evento); //esto en vez de aï¿½adir el evento en la constructora.
 		db.persist(evento);
 
 		db.getTransaction().commit();
@@ -489,7 +489,7 @@ public class DataAccess  {
 	}
 
 	/**
-	 * Crea y añade un pronostico a la base de datos
+	 * Crea y aï¿½ade un pronostico a la base de datos
 	 * 
 	 * @param respuesta
 	 * @param tasa
@@ -936,7 +936,7 @@ public class DataAccess  {
 		}
 
 		return informes;
-	}*/ //unexpeted query expression end, no sé pq la verdá
+	}*/ //unexpeted query expression end, no sï¿½ pq la verdï¿½
 
 	public void resolverProblema(InformeError problema) {
 		db.getTransaction().begin();
@@ -1026,14 +1026,11 @@ public class DataAccess  {
 				resul= e;
 			}
 		}
-
-		if(!resul.getUsuarios().isEmpty()) {
+		try {
 			for (Usuario a: resul.getUsuarios()) {
 				if (a.getDNI().equals(actor.getDNI())) return 1;
 			}
-		}
-
-		if (resul!=null) {
+			
 			db.getTransaction().begin();
 			Promocion mod= db.find(Promocion.class, resul);
 			if(mod.getNum_veces()<=0) return 2;
@@ -1041,22 +1038,23 @@ public class DataAccess  {
 			Usuario user= db.find(Usuario.class, actor);
 			mod.anadirUsuario(user);
 
-			if(mod.getCompeticion()==null) {
-				if(!mod.isTipo()) {
-					user.setSaldo(user.getSaldo()+mod.getCant());
-				}
-				else user.anadirPromo(mod);	
-			}
-			else {
-				user.anadirPromo(mod);
-			}
+			if(mod.getCompeticion()==null && !mod.isTipo()) {
+				
+				user.setSaldo(user.getSaldo()+mod.getCant());
+				
+			}else user.anadirPromo(mod);	
 
 			db.persist(mod);
 			db.persist(user);
 			db.getTransaction().commit();
 			return 0;
+			
+		}catch(NullPointerException e) {
+			System.out.println(e.getMessage());
 		}
+		
 		return 3;
+	}
 	}
 
 	public Vector<Competicion> obtenerSugerenciasCompeticiones() {

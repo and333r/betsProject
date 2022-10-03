@@ -86,7 +86,7 @@ public class AnadirPromocionGUI extends JFrame {
 		
 	    Vector<String> strings = new Vector<String>();
 		strings.add(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaOpcion"));
-		strings.add("Si"); //TODO añadir etiqueta
+		strings.add("Si"); //TODO aï¿½adir etiqueta
 		strings.add("No");
 		comboBoxSiONo.setModel(new DefaultComboBoxModel<String>(strings));
 		comboBoxSiONo.addActionListener(new ActionListener() {
@@ -138,7 +138,7 @@ public class AnadirPromocionGUI extends JFrame {
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 		 Vector<String> string = new Vector<String>();
 			string.add(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaOpcion"));
-			string.add("Si"); //TODO añadir etiqueta
+			string.add("Si"); //TODO aï¿½adir etiqueta
 			string.add("No");
 			comboBox.setModel(new DefaultComboBoxModel<String>(string));
 		comboBox.addActionListener(new ActionListener() {
@@ -161,20 +161,9 @@ public class AnadirPromocionGUI extends JFrame {
 		
 		btnNewButtonAnadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boolean anadido=false;
-				if (textFieldCode.getText().equals(null) || textFieldNum.getText().equals(null) || textFieldCant.getText().equals(null)) {
-					lblNewLabelErrores.setText(ResourceBundle.getBundle("Etiquetas").getString("AllCam"));
-					lblNewLabelErrores.setVisible(true);
-				}
-				
-				else if (comboBox.getSelectedItem().equals(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaOpcion"))) {
-						lblNewLabelErrores.setText(ResourceBundle.getBundle("Etiquetas").getString("Prctg"));
-						lblNewLabelErrores.setVisible(true);
-					}
-				
-				else {
-					code= textFieldCode.getText();
+
 					try {
+						code= textFieldCode.getText();
 						num_veces=Integer.parseInt(textFieldNum.getText());
 						cant=Integer.parseInt(textFieldCant.getText()); 
 						if(comp!=null) {
@@ -196,15 +185,9 @@ public class AnadirPromocionGUI extends JFrame {
 						lblNewLabelErrores.setText(ResourceBundle.getBundle("Etiquetas").getString("Valid"));
 						lblNewLabelErrores.setVisible(true);
 					}
-					
-					
-				
-					
+										
 				}
-				
-				
-				
-			}
+		
 		});
 		btnNewButtonAnadir.setBounds(426, 189, 138, 44);
 		getContentPane().add(btnNewButtonAnadir);
@@ -251,7 +234,7 @@ public class AnadirPromocionGUI extends JFrame {
 		
 		/////////////////////////////////////////////////////////////////////////////////////////////////////
 		
-		lblSiONo = new JLabel("¿Esta promocion pertenece a una competicion?."); //TODO añadir las etiquetas
+		lblSiONo = new JLabel("ï¿½Esta promocion pertenece a una competicion?."); //TODO aï¿½adir las etiquetas
 		lblSiONo.setBounds(10, 20, 304, 14);
 		getContentPane().add(lblSiONo);
 		
