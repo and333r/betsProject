@@ -96,6 +96,11 @@ public class ConsultarHistorialApuestasGUI extends JFrame {
 
 				else if (usuario == 2) 
 					nombreUsuario = textFUsuario.getText();
+				
+				else {
+					lblNoApuestas.setText(ResourceBundle.getBundle("Etiquetas").getString("UsuarioNoExistente"));
+					lblNoApuestas.setVisible(true);
+					}
 
 				if (facadeIm.actorExistente(nombreUsuario)) {
 
