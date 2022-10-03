@@ -13,7 +13,7 @@ import javax.persistence.*;
 public abstract class Actor {
 	
 	@Id
-	private String nombreUsuario; //nick del usuario.
+	private String nombreUsuario; //Id del usuario.
 	private String DNI;
 	private String nombre;
 	private String apellido1;
