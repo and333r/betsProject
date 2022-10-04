@@ -153,7 +153,7 @@ public class CrearCompeticionGUI extends JFrame {
 	
 	private void pulsadoCrearCompeticion() {
 		
-		if (this.textFNombre.equals("") || this.textFDeporte.equals("")) {
+		if (this.textFNombre.getText().equals("") || this.textFDeporte.getText().equals("")) {
 			
 			this.lblErrores.setText("Por favor, rellene todos los campos necesarios.");
 		}else

@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 
 /**
- * Una competición que puede englobar un conjunto de eventos.
+ * Una competiciï¿½n que puede englobar un conjunto de eventos.
  * @author Markel Barrena.
  * 26/02/2022
  */
@@ -20,11 +20,11 @@ public class Competicion {
 
 	private String nombre;
 	private String deporte;
-	private char genero; //género de los deportistas ('M' de masculino, 'F' de femenino, 'A' de mixto/Unisex).
+	private char genero; //gï¿½nero de los deportistas ('M' de masculino, 'F' de femenino, 'A' de mixto/Unisex).
 	private String temporada;
-	private String descripcion; //descripción opcional.
+	private String descripcion; //descripciï¿½n opcional.
 	@OneToMany (cascade =CascadeType.PERSIST)
-	private Vector<Evento> eventos; //eventos de la competición.
+	private Vector<Evento> eventos; //eventos de la competiciï¿½n.
 	private boolean sugerencia; //true en caso de ser una sugerencia de un usuario, y false en caso de ser algo definitivo
 	
 	@OneToOne
@@ -136,8 +136,8 @@ public class Competicion {
 	}
 	
 	/**
-	 * Añade un evento a la lista de eventos de esta competición.
-	 * @param e el evento a añadir.
+	 * Aï¿½ade un evento a la lista de eventos de esta competiciï¿½n.
+	 * @param e el evento a aï¿½adir.
 	 */
 	public void anadirEvento(Evento evento) {
 		
@@ -154,6 +154,7 @@ public class Competicion {
 			return false;
 		Competicion competicion = (Competicion) obj;
 		
-		return (this.nombre.equals(competicion.getNombre()) && competicion.getDeporte().equals(this.deporte) && (competicion.getTemporada() == this.temporada) && (competicion.getGenero() == this.genero));
+		return (this.nombre.equals(competicion.getNombre()) && competicion.getDeporte().equals(this.deporte) && 
+				(competicion.getTemporada() == this.temporada) && (competicion.getGenero() == this.genero));
 	}
 }

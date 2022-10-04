@@ -154,7 +154,7 @@ public class SugerirCompeticionGUI extends JFrame {
 	
 	private void pulsadoSugerirCompeticion() {
 		
-		if (this.textFNombre.equals("") || this.textFDeporte.equals("")) {
+		if (this.textFNombre.getText().equals("") || this.textFDeporte.getText().equals("")) {
 			
 			this.lblErrores.setText("Por favor, rellene todos los campos necesarios.");//TODO para agus: cambiar errores a etiquetas, tmbn en crear competicion de vidal -agus
 		}else
