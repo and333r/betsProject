@@ -878,7 +878,7 @@ public class DataAccess  {
 	public void depositar(Actor actor, double deposito) {
 		db.getTransaction().begin();
 		Usuario u= (Usuario) db.find(Actor.class, actor);
-		IniciarSesionGUI.cambiarActor(u);;
+		IniciarSesionGUI.cambiarActor(u);
 		u.actualizarSaldo(deposito);
 		db.getTransaction().commit();
 	}

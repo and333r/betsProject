@@ -248,7 +248,7 @@ public class BLFacadeImplementation  implements BLFacade {
 	public int crearApuesta(Pronostico pronostico, Usuario usuario, double cantidad) { 
 		
 		dbManager.open(false);
-		if (!this.existeApuesta(pronostico.getId()+"_"+usuario.getNombreUsuario())) { //comprobacion de existenca //TODO Comprobar que la apuesta es mayor a la apuesta m�nima.
+		if (!this.existeApuesta(pronostico.getId()+"_"+usuario.getNombreUsuario())) { //comprobacion de existenca 
 			switch(dbManager.crearApuesta(pronostico, usuario, cantidad)) {
 			case 0:
 				dbManager.close();
@@ -311,7 +311,6 @@ public class BLFacadeImplementation  implements BLFacade {
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * TODO
 	 * @param respuesta
 	 * @param p
 	 * @return
@@ -388,7 +387,6 @@ public class BLFacadeImplementation  implements BLFacade {
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/**
-	 * TODO para ander: anadir descripcion del metodo -agus
 	 * 
 	 * @param OGpwd La contrase�a original
 	 * @param newPwd La contrase�a nueva
