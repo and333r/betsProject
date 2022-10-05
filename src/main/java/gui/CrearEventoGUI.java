@@ -242,7 +242,7 @@ public class CrearEventoGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				boolean camposInCompletos= (cmbBoxCompeticiones.getSelectedItem()==null || txtFieldNombreEvento.getText().equals("") ||
 						comboBoxDia0.getSelectedItem()==null || comboBoxMes0.getSelectedItem()==null ||
-						textFAno0.getText().equals("")); //determina si todo está rellenado.
+						textFAno0.getText().equals("")); //determina si todo esto rellenado.
 				if(camposInCompletos) {
 					lblErrores.setVisible(true);
 					lblErrores.setText(ResourceBundle.getBundle("Etiquetas").getString("RellenaTCampos")); //muestra error de campos vacios

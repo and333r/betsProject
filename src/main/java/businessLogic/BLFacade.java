@@ -1,18 +1,7 @@
 package businessLogic;
 
-import java.util.Vector;
-
-import java.util.Date;
 
 
-
-
-
-//import domain.Booking;
-import domain.Evento;
-import domain.Pregunta;
-import exceptions.EventFinished;
-import exceptions.QuestionAlreadyExist;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
