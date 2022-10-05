@@ -522,19 +522,19 @@ public class DataAccess  {
 		for(Promocion e: u.getPromos_abiertas()) {
 			if(e.getCompeticion().getId().equals(p.getPregunta().getEvento().getComp().getId())) {
 				promo.add(e);
-
-				if(!e.isTipo()) {
-					double aux2=e.getCant();
-					cant=(cantidad + aux2);	
-				}
-				else {
-					double aux= e.getCant();
-					cant =(cantidad + (cantidad*(aux/100.0)));
-				}
 			}
 		}
-
+		
+		
 		for(Promocion b: promo) {
+			if(!b.isTipo()) {
+				double aux2=b.getCant();
+				cant=(cantidad + aux2);	
+			}
+			else {
+				double aux= b.getCant();
+				cant =(cantidad + (cantidad*(aux/100.0)));
+			}
 			int index= u.getPromos_abiertas().indexOf(b);
 			u.getPromos_abiertas().remove(index);
 		}
