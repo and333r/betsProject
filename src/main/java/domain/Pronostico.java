@@ -6,7 +6,7 @@ import java.util.Vector;
 
 import javax.persistence.*;
 /**
- * Posibles pronosticos a una pregunta sobre un evento, se puede apostar sobre él.
+ * Posibles pronosticos a una pregunta sobre un evento, se puede apostar sobre ï¿½l.
  * @author Markel Barrena.
  * 26/02/2022
  */
@@ -15,7 +15,7 @@ public class Pronostico {
 
 	@Id
 	private String id;
-	private String respuesta; //el pronóstico a la pregunta.
+	private String respuesta; //el pronï¿½stico a la pregunta.
 	@OneToOne 
 	private Pregunta pregunta;
 	private double ganancia;
@@ -68,11 +68,11 @@ public class Pronostico {
 	}
 
 	/**
-	 * Determina si este pronóstico coincide con el resultado.
+	 * Determina si este pronï¿½stico coincide con el resultado.
 	 * @return true si es correcto.
 	 */
 	public boolean esCorrecto() {
-		return this.pregunta.getResultado().equals(this.respuesta);
+		return this.pregunta.getResultado().respuesta.equals(this.respuesta);
 		//return ganador;
 	}
 	/*
