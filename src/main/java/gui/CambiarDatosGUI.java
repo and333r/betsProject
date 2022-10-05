@@ -29,7 +29,7 @@ public class CambiarDatosGUI extends JFrame {
 	private JLabel lblErrores;
 	
 	private JTextField textFieldVariable;
-	private JTextField textFieldContraseña;
+	private JTextField textFieldContrasena;
 	private JButton btnNewButton;
 	
 
@@ -60,7 +60,7 @@ public class CambiarDatosGUI extends JFrame {
 				lblIntroduceContrasena.setText(ResourceBundle.getBundle("Etiquetas").getString("ConfirmaContra"));
 				lblIntroduceContrasena.setVisible(true);
 				
-				textFieldContraseña.setText((String) null);
+				textFieldContrasena.setText((String) null);
 				textFieldVariable.setText((String) null);
 				lblErrores.setVisible(false);
 			}
@@ -81,7 +81,7 @@ public class CambiarDatosGUI extends JFrame {
 				lblIntroduceContrasena.setText(ResourceBundle.getBundle("Etiquetas").getString("ConfirmaContra"));
 				lblIntroduceContrasena.setVisible(true);
 				
-				textFieldContraseña.setText((String) null);
+				textFieldContrasena.setText((String) null);
 				textFieldVariable.setText((String) null);
 				lblErrores.setVisible(false);
 			}
@@ -117,19 +117,19 @@ public class CambiarDatosGUI extends JFrame {
 		getContentPane().add(textFieldVariable);
 		textFieldVariable.setColumns(10);
 
-		textFieldContraseña = new JTextField();
-		textFieldContraseña.setText((String) null);
-		textFieldContraseña.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		textFieldContraseña.setColumns(10);
-		textFieldContraseña.setBounds(174, 266, 256, 36);
-		getContentPane().add(textFieldContraseña);
+		textFieldContrasena = new JTextField();
+		textFieldContrasena.setText((String) null);
+		textFieldContrasena.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		textFieldContrasena.setColumns(10);
+		textFieldContrasena.setBounds(174, 266, 256, 36);
+		getContentPane().add(textFieldContrasena);
 
 		btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Cambiar")); 
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				ApplicationLauncher.inicioSesion();
-				int resultado = facadeIm.comprobarContrasena(IniciarSesionGUI.actor().getNombreUsuario(), textFieldContraseña.getText());
+				int resultado = facadeIm.comprobarContrasena(IniciarSesionGUI.actor().getNombreUsuario(), textFieldContrasena.getText());
 				if (resultado == 1) {
 					if (esContrasena)
 						if (facadeIm.cambiarContrasena(IniciarSesionGUI.actor().getNombreUsuario(), textFieldVariable.getText())) {

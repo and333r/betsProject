@@ -76,8 +76,8 @@ public abstract class Actor {
 		return pswd;
 	}
 	
-	public void setPswd(String contrase�a) {
-		this.pswd = contrase�a;
+	public void setPswd(String contrasena) {
+		this.pswd = contrasena;
 	}
 	
 	public char getSexo() {

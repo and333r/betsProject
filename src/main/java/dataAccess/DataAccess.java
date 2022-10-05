@@ -1055,7 +1055,7 @@ public class DataAccess  {
 		
 		return 3;
 	}
-	}
+	
 
 	public Vector<Competicion> obtenerSugerenciasCompeticiones() {
 		Vector<Competicion> comps = new Vector<Competicion>();

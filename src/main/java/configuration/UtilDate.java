@@ -56,21 +56,21 @@ public class UtilDate {
 
 	}
 
-	public static Date nuevaFechaHMS(int año,int mes,int dia, int hora, int minuto, int segundo) {
+	public static Date nuevaFechaHMS(int ano,int mes,int dia, int hora, int minuto, int segundo) {
 
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTimeZone(TimeZone.getTimeZone("CET"));
-		calendar.set(año, mes, dia, hora, minuto, segundo);
+		calendar.set(ano, mes, dia, hora, minuto, segundo);
 		calendar.set(Calendar.MILLISECOND, 0);
 		//System.out.println("newDate: "+calendar.getTime());
 		return calendar.getTime();
 	}
 
-	public static Date nuevaFecha(int año,int mes,int dia) {
+	public static Date nuevaFecha(int ano,int mes,int dia) {
 
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTimeZone(TimeZone.getTimeZone("CET"));
-		calendar.set(año, mes, dia, 0, 0, 0);
+		calendar.set(ano, mes, dia, 0, 0, 0);
 		calendar.set(Calendar.MILLISECOND, 0);
 		//System.out.println("newDate: "+calendar.getTime());
 		return calendar.getTime();
