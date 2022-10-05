@@ -29,8 +29,8 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <sonar.organization>andercaro</sonar.organization> 
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>   
-    <sonar.projectKey>betsProject22</sonar.projectKey>   
-    <sonar.login>3fa2a476fa3f4289b7b107793a13cd6a88d86c29</sonar.login> 
+    <sonar.projectKey>Bets21</sonar.projectKey>   
+    <sonar.login>3b867600723b344038d5ffeb6fde89e4afe908c8</sonar.login> 
 </properties>
 
 
