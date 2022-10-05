@@ -518,7 +518,8 @@ public class DataAccess  {
 		Usuario u = db.find(Usuario.class, usuario.getNombreUsuario());
 		Pronostico p = db.find(Pronostico.class, pronostico.getId());
 
-
+		if(!u.getPromos_abiertas().isEmpty()) {
+			
 		for(Promocion e: u.getPromos_abiertas()) {
 			if(e.getCompeticion().getId().equals(p.getPregunta().getEvento().getComp().getId())) {
 				promo.add(e);
@@ -566,7 +567,8 @@ public class DataAccess  {
 			db.getTransaction().rollback();
 			return 2;
 		}
-
+		}
+		else return 3;
 
 	}
 
