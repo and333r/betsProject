@@ -28,14 +28,14 @@ import gui.IniciarSesionGUI;
 public class BLFacadeImplementation  implements BLFacade {
 
 	DataAccess dbManager;
-	final static String ini = "initialize";
+	final static String INI = "initialize";
 
 	public BLFacadeImplementation()  {		
 		System.out.println("Creating BLFacadeImplementation instance");
 		ConfigXML c=ConfigXML.getInstance();
 
-		if (c.getDataBaseOpenMode().equals(ini)) {
-			dbManager=new DataAccess(c.getDataBaseOpenMode().equals(ini));
+		if (c.getDataBaseOpenMode().equals(INI)) {
+			dbManager=new DataAccess(c.getDataBaseOpenMode().equals(INI));
 			dbManager.initializeDB();
 		} else
 			dbManager=new DataAccess();
@@ -49,7 +49,7 @@ public class BLFacadeImplementation  implements BLFacade {
 		System.out.println("Creating BLFacadeImplementation instance with DataAccess parameter");
 		ConfigXML c=ConfigXML.getInstance();
 
-		if (c.getDataBaseOpenMode().equals(ini)) {
+		if (c.getDataBaseOpenMode().equals(INI)) {
 			da.open(true);
 			da.initializeDB();
 			da.close();
@@ -153,7 +153,7 @@ public class BLFacadeImplementation  implements BLFacade {
 	 * @param genero
 	 * @param temporada
 	 * @param descripcion
-	 * @return 1: La competicion esta a�adida; 0: Todo ok
+	 * @return 1: La competicion esta a�adida; 0: To ok
 	 */
 
 	public Competicion crearCompeticion(String nombre, String deporte, char genero, String temporada, String descripcion, Actor admin) {
@@ -175,7 +175,7 @@ public class BLFacadeImplementation  implements BLFacade {
 	 * @param nombre
 	 * @param fecha
 	 * @param comp
-	 * @return 1:  El evento es un acontecimiento que ya ha pasado.; 2:El evento que queremos a�adir ya existe; 0: Todo ok
+	 * @return 1:  El evento es un acontecimiento que ya ha pasado.; 2:El evento que queremos a�adir ya existe; 0: To ok
 	 * @throws EventoNoExistenteException 
 	 */
 	public int crearEvento(String nombre, Date fecha, Competicion comp, String descripcion, Actor admin) throws EventoNoExistenteException {
@@ -223,7 +223,7 @@ public class BLFacadeImplementation  implements BLFacade {
 	 * @param respuesta
 	 * @param tasa
 	 * @param pregunta
-	 * @return 1: El pronostico ya existe; 2: Tasa es incorrecta; 0: Todo ok
+	 * @return 1: El pronostico ya existe; 2: Tasa es incorrecta; 0: To ok
 	 * @throws PreguntaNoExistenteException 
 	 */
 	public int crearPronostico(String respuesta, Pregunta pregunta, double ganancia, Actor admin) {
