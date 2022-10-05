@@ -539,8 +539,6 @@ public class DataAccess  {
 			u.getPromos_abiertas().remove(index);
 		}
 
-		System.out.println(cant);
-
 		Apuesta apuesta = new Apuesta (pronostico,usuario,cant);
 
 		if (u.getSaldo() >= cantidad) {
