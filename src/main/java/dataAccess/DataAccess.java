@@ -918,20 +918,6 @@ public class DataAccess  {
 		db.getTransaction().commit();
 	}
 
-	/*	public Vector<InformeError> obtenerInformes(boolean resuelto) {
-		Vector<InformeError> informes = new Vector<InformeError>();
-
-		TypedQuery<InformeError> query = db.createQuery("SELECT i FROM InformeError i WHERE i.resuelto=?",InformeError.class);
-		query.setParameter(1, resuelto);
-		List<InformeError> resultados = query.getResultList();
-
-		for (InformeError ie: resultados) {
-			informes.add(ie);
-		}
-
-		return informes;
-	}*/ //unexpeted query expression end, no s� pq la verd�
-
 	public void resolverProblema(InformeError problema) {
 		db.getTransaction().begin();
 		InformeError problema0= db.find(InformeError.class, problema.getId());
