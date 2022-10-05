@@ -509,9 +509,8 @@ public class DataAccess  {
 	public int crearApuesta(Pronostico pronostico, Usuario usuario, double cantidad) {
 
 		this.open(false);
-		boolean modiff=false;
 		ArrayList<Promocion> promo= new ArrayList<Promocion>();
-		double cant=0;
+		double cant=cantidad;
 		db.getTransaction().begin();
 
 
@@ -526,19 +525,14 @@ public class DataAccess  {
 
 				if(!e.isTipo()) {
 					double aux2=e.getCant();
-					cant=(cantidad + aux2);
-					modiff=true;	
+					cant=(cantidad + aux2);	
 				}
 				else {
 					double aux= e.getCant();
 					cant =(cantidad + (cantidad*(aux/100.0)));
-					modiff=true;
 				}
 			}
-		}//TODO Si tienes dos promociones aplicables, solo aplicas una, y la otra te la cargas. no seria mejor preguntar al usuario si la quiere canjear?
-
-		if (!modiff)
-			cant = cantidad;
+		}
 
 		for(Promocion b: promo) {
 			int index= u.getPromos_abiertas().indexOf(b);
