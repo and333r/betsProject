@@ -27,12 +27,12 @@
 <properties>
     <maven.compiler.target>1.8</maven.compiler.target>
     <maven.compiler.source>1.8</maven.compiler.source>
+    <sonar.organization>andercaro</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.projectKey>betsProject22</sonar.projectKey>   
+    <sonar.login>3fa2a476fa3f4289b7b107793a13cd6a88d86c29</sonar.login>  
 </properties>
-	
-<properties>
-  <sonar.organization>andercaro</sonar.organization>
-  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-</properties>
+
 
 <!-- https://mvnrepository.com/artifact/junit/junit -->
 <dependencies>
