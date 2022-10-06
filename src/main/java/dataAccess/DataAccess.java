@@ -538,7 +538,9 @@ public class DataAccess  {
 			int index= u.getPromos_abiertas().indexOf(b);
 			u.getPromos_abiertas().remove(index);
 		}
-
+		
+		}
+		
 		Apuesta apuesta = new Apuesta (pronostico,usuario,cant);
 
 		if (u.getSaldo() >= cantidad) {
@@ -559,8 +561,7 @@ public class DataAccess  {
 			db.getTransaction().rollback();
 			return 2;
 		}
-		}
-		else return 3;
+
 
 	}
 
