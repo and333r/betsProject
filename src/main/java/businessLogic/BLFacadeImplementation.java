@@ -259,6 +259,9 @@ public class BLFacadeImplementation  implements BLFacade {
 			case 2:
 				dbManager.close();
 				return 1; //saldo insuficiente
+			case 3:
+				dbManager.close();
+				return 5;
 			default:
 				return -1;
 			}

@@ -516,6 +516,8 @@ public class DataAccess  {
 
 		Usuario u = db.find(Usuario.class, usuario.getNombreUsuario());
 		Pronostico p = db.find(Pronostico.class, pronostico.getId());
+		
+		if(u==null | p==null) return 4;
 
 		if(!u.getPromos_abiertas().isEmpty()) {
 			
