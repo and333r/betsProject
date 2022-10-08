@@ -86,7 +86,7 @@ public class AnadirPromocionGUI extends JFrame {
 		
 	    Vector<String> strings = new Vector<String>();
 		strings.add(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaOpcion"));
-		strings.add("Si"); //TODO a�adir etiqueta
+		strings.add("Si"); 
 		strings.add("No");
 		comboBoxSiONo.setModel(new DefaultComboBoxModel<String>(strings));
 		comboBoxSiONo.addActionListener(new ActionListener() {
@@ -115,7 +115,7 @@ public class AnadirPromocionGUI extends JFrame {
 						textFieldNum.setVisible(true);
 						comboBox.setVisible(true);
 						lblNewLabelNum.setVisible(true);
-						lblNewLabelErrores.setVisible(true);
+						lblNewLabelErrores.setVisible(false);
 						lblNewLabelComp.setVisible(false);
 						lblNewLabelCode.setVisible(true);	
 						lblNewLabel.setVisible(true);
@@ -138,7 +138,7 @@ public class AnadirPromocionGUI extends JFrame {
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 		 Vector<String> string = new Vector<String>();
 			string.add(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaOpcion"));
-			string.add("Si"); //TODO a�adir etiqueta
+			string.add("Si"); 
 			string.add("No");
 			comboBox.setModel(new DefaultComboBoxModel<String>(string));
 		comboBox.addActionListener(new ActionListener() {
@@ -222,7 +222,7 @@ public class AnadirPromocionGUI extends JFrame {
 				textFieldNum.setVisible(true);
 				comboBox.setVisible(true);
 				lblNewLabelNum.setVisible(true);
-				lblNewLabelErrores.setVisible(true);
+				lblNewLabelErrores.setVisible(false);
 				lblNewLabelComp.setVisible(false);
 				lblNewLabelCode.setVisible(true);	
 				lblNewLabel.setVisible(true);
@@ -234,7 +234,7 @@ public class AnadirPromocionGUI extends JFrame {
 		
 		/////////////////////////////////////////////////////////////////////////////////////////////////////
 		
-		lblSiONo = new JLabel("�Esta promocion pertenece a una competicion?."); //TODO a�adir las etiquetas
+		lblSiONo = new JLabel("¿Esta promocion pertenece a una competicion?."); 
 		lblSiONo.setBounds(10, 20, 304, 14);
 		getContentPane().add(lblSiONo);
 		
