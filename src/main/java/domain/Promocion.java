@@ -15,24 +15,24 @@ public class Promocion {
 
 	@Id
 	private String id;
-	private String code; //El código que hay que meter.
+	private String code; //El cï¿½digo que hay que meter.
 	private int cant; //La cantidad de la promocion (Ya sea el porcentaje o el int)
-	private int num_veces; //El número de veces que se puede aplicar esta promoción --> En caso de ser -1, no tiene límite (Se puede aplicar de manera infinita para distinos usuarios).
+	private int num_veces; //El nï¿½mero de veces que se puede aplicar esta promociï¿½n --> En caso de ser -1, no tiene lï¿½mite (Se puede aplicar de manera infinita para distinos usuarios).
 	private boolean tipo; //Si es true significa que la cifra es un porcentaje, si es false, significa que es un integer normal
-	private boolean restricciones; //Si es true signiofica que la promocion es valida solo en ciertas competiciones. Se puede ampliar a solo en ciertos eventos y preguntas también.
+	private boolean restricciones; //Si es true signiofica que la promocion es valida solo en ciertas competiciones. Se puede ampliar a solo en ciertos eventos y preguntas tambiï¿½n.
 
 	@OneToOne
-	private Administrador admin; //El administrador que ha creado la promoción. 
+	private Administrador admin; //El administrador que ha creado la promociÃ³n. 
 	@OneToOne
 	private Competicion competicion;
 
 	@OneToMany (cascade =CascadeType.PERSIST)
-	private ArrayList<Usuario> usuarios; //Los usuarios que han aplicado la promoción --> Para evitar que se use dos veces.
+	private ArrayList<Usuario> usuarios; //Los usuarios que han aplicado la promociï¿½n --> Para evitar que se use dos veces.
 
 
 	public Promocion (String codes, Administrador admin, int cant, int num_veces, boolean tipo) {
-		this.id= new String() + code +  cant + tipo; // En caso de que haya dos promociones con el mismo id, es decir, la misma cantidad y el mismo numero de veces, lo que se hará será actualizar 
-		//la ya existente, añadiendo el numero de veces deseado. Por eso en el id no está el admin.
+		this.id= new String() + code +  cant + tipo; // En caso de que haya dos promociones con el mismo id, es decir, la misma cantidad y el mismo numero de veces, lo que se harï¿½ serï¿½ actualizar 
+		//la ya existente, aÃ±adiendo el numero de veces deseado. Por eso en el id no estï¿½ el admin.
 		this.code=codes;
 		this.admin=admin;
 		this.cant=cant;
@@ -53,7 +53,7 @@ public class Promocion {
 
 	public Promocion (String code, Administrador admin, int cant, int num_veces, Competicion competi, boolean tipo) {
 		
-		this.id= new String () + code + cant + competi.getId() + tipo; //Aquí pasa lo mismo que antes.
+		this.id= new String () + code + cant + competi.getId() + tipo; //Aquï¿½ pasa lo mismo que antes.
 		this.code=code;
 		this.admin=admin;
 		this.cant=cant;
@@ -62,6 +62,10 @@ public class Promocion {
 		this.restricciones=true;
 		this.tipo=tipo;
 		usuarios= new ArrayList<Usuario>();
+	}
+
+	public Promocion(String string) {
+		this.id = string;
 	}
 
 	public String getId() {

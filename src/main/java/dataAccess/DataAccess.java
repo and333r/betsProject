@@ -1002,7 +1002,7 @@ public class DataAccess  {
 		query.setParameter(1, text);
 
 		List<Promocion> resultados = query.getResultList();
-		Promocion resul=null;
+		Promocion resul= new Promocion("0");
 		for(Promocion e: resultados) {
 			if(e.getCode().equals(text)) {
 				resul= e;
