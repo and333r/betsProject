@@ -57,7 +57,7 @@ public class UsarPromocionGUI extends JFrame{
 					lblNewLabelError.setVisible(true);
 				}
 				else {
-					lblNewLabelError.setText(ResourceBundle.getBundle("Etiquetas").getString("Success"));
+					lblNewLabelError.setText(ResourceBundle.getBundle("Etiquetas").getString("Prom"));
 					lblNewLabelError.setVisible(true);
 				}
 				

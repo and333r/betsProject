@@ -158,7 +158,7 @@ public class DispUserGUI extends JFrame{//TODO para vidal: mirar lo de los idiom
 		btnInformarProblema.setBounds(255, 168, 201, 37);
 		getContentPane().add(btnInformarProblema);
 		
-		btnNewButton = new JButton("Aplicar Promoción"); 
+		btnNewButton = new JButton("Aplicar PromociÃ³n"); 
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

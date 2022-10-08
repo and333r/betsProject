@@ -191,7 +191,7 @@ public class DispAdminGUI extends JFrame{//TODO para vidal: mirar lo de los idio
 		
 		
 		
-	    btnAnadirPromo = new JButton("Añadir promoción"); //TODO añadir etiqueta
+	    btnAnadirPromo = new JButton("AÃ±adir promociÃ³n"); //TODO aï¿½adir etiqueta
 		btnAnadirPromo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ventanaNueva= new AnadirPromocionGUI();

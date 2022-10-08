@@ -996,7 +996,8 @@ public class DataAccess  {
 	}
 
 	public int aplicarPromocion(String text, Usuario actor) {
-
+		
+		try {
 		TypedQuery<Promocion> query = db.createQuery("SELECT p FROM Promocion p",Promocion.class);
 		query.setParameter(1, text);
 
@@ -1007,7 +1008,7 @@ public class DataAccess  {
 				resul= e;
 			}
 		}
-		try {
+		
 			for (Usuario a: resul.getUsuarios()) {
 				if (a.getDNI().equals(actor.getDNI())) return 1;
 			}
@@ -1028,13 +1029,13 @@ public class DataAccess  {
 			db.persist(mod);
 			db.persist(user);
 			db.getTransaction().commit();
-			return 0;
+			
 			
 		}catch(NullPointerException e) {
-			System.err.println(e.getMessage());
+			return 3;
+			
 		}
-		
-		return 3;
+		return 0;
 	}
 	
 
