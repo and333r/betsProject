@@ -55,10 +55,17 @@ public class Pregunta {//TODO consultar el bests que nos daban y volver a poner 
 		this.resultado = null;
 		this.sugerencia=true;
 	}
+	
+	public Pregunta(String id) {
+		this.id=id;
+	}
 
 	//getters y setters.
 	public void setResultado(Pronostico resultado) {
 		this.resultado = resultado;
+	}
+	public void setMinBet(double resultado) {
+		this.minBet = resultado;
 	}
 	
 	public void setPronosticos() {

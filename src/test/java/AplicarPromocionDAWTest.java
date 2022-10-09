@@ -58,7 +58,7 @@ public class AplicarPromocionDAWTest {
 			 testDA.anadirUsuario(u1);
 			
 			 
-			 int resul = testDA.aplicarPromocion(text, u1);
+			 int resul = sut.aplicarPromocion(text, u1);
 			 testDA.close();
 			 assertEquals(2,resul);
 				

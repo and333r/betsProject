@@ -25,6 +25,7 @@ public class Promocion {
 	private Administrador admin; //El administrador que ha creado la promoción. 
 	@OneToOne
 	private Competicion competicion;
+	private String nombreComp;
 
 	@OneToMany (cascade =CascadeType.PERSIST)
 	private ArrayList<Usuario> usuarios; //Los usuarios que han aplicado la promoci�n --> Para evitar que se use dos veces.
@@ -67,6 +68,13 @@ public class Promocion {
 	public Promocion(String string) {
 		this.id = string;
 	}
+	
+	public Promocion(String string, String comp) {
+		this.id = string;
+		this.nombreComp=comp;
+		this.competicion= new Competicion("Competicion:"+comp,comp);
+	}
+
 
 	public Promocion(String text, ArrayList<Usuario> users) {
 		this.code = "1";
@@ -84,6 +92,10 @@ public class Promocion {
 	public String getId() {
 		return id;
 	}
+	
+	public String getNombreComo() {
+		return nombreComp;
+	}
 
 	public void setId(String id) {
 		this.id = id;
@@ -100,7 +112,9 @@ public class Promocion {
 	public int getNum_veces() {
 		return num_veces;
 	}
-
+	
+	
+	
 	public void setNum_veces(int num_veces) {
 		this.num_veces = num_veces;
 	}

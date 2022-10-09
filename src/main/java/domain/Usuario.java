@@ -37,7 +37,10 @@ public class Usuario extends Actor{
 
 	public Usuario(String string, ArrayList<Promocion> arrayList) {
 		super(string,"12345678N");
-		this.promos_abiertas = arrayList;
+		this.promos_abiertas = new ArrayList<Promocion>();
+		this.apuestas=new ArrayList<Apuesta>();
+		this.antiguasContrasenas = new ArrayList<String>();
+		this.antiguosCorreosElectronicos = new ArrayList<String>();
 	}
 
 	public Usuario(String string) {

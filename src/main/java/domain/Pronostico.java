@@ -25,6 +25,8 @@ public class Pronostico {
 	@OneToOne
 	private Administrador admin;
 	private String nombreAdmin;
+	private String competicion;
+	private double minBet;
 
 	
 
@@ -39,7 +41,27 @@ public class Pronostico {
 		this.admin= (Administrador) admin;
 		this.nombreAdmin= admin.getNombreUsuario();
 	}
-
+	
+	public Pronostico (String id, String competicion) {
+		this.id=id;
+		this.competicion=competicion;
+		this.apuestas = new Vector<Apuesta>();
+	}
+	
+	public void setMinBet(double n){
+		this.minBet=n;
+		
+	}
+	
+	public void setPregunta(Pregunta p) {
+	this.pregunta=p;}
+	
+	public double getMinBet() {
+		return this.minBet;
+	}
+	public String getComp() {
+		return this.competicion;
+	}
 	//getters y setters:
 
 	public String getNombreAdmin() {

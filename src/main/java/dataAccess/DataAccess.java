@@ -505,24 +505,35 @@ public class DataAccess  {
 		db.getTransaction().commit();
 		return 0;
 	}
-
+	
+	public Usuario obtenerUsuarioDeseado(Usuario u) {
+		TypedQuery<Usuario> query = db.createQuery("SELECT u FROM Usuario u",Usuario.class);
+		List<Usuario> prontc = query.getResultList();
+		
+		for(Usuario e: prontc) {
+			if(u.getNombreUsuario().equals(e.getNombreUsuario())) {
+				return e;
+			}
+		}
+		return null;
+		
+	}
 	public int crearApuesta(Pronostico pronostico, Usuario usuario, double cantidad) {
 
 		this.open(false);
 		ArrayList<Promocion> promo= new ArrayList<Promocion>();
 		double cant=cantidad;
 		db.getTransaction().begin();
-
-
-		Usuario u = db.find(Usuario.class, usuario.getNombreUsuario());
-		Pronostico p = db.find(Pronostico.class, pronostico.getId());
+		
+		Usuario u= this.obtenerUsuarioDeseado(usuario);
+		
+				Pronostico p = db.find(Pronostico.class, pronostico.getId());
 		
 		if(u==null | p==null) return 4;
 
 		if(!u.getPromos_abiertas().isEmpty()) {
-			
-		for(Promocion e: u.getPromos_abiertas()) {
-			if(e.getCompeticion().getId().equals(p.getPregunta().getEvento().getComp().getId())) {
+		for(Promocion e: usuario.getPromos_abiertas()) {
+			if(p.getComp().equals(e.getNombreComo())) {
 				promo.add(e);
 			}
 		}
@@ -537,8 +548,8 @@ public class DataAccess  {
 				double aux= b.getCant();
 				cant =(cantidad + (cantidad*(aux/100.0)));
 			}
-			int index= u.getPromos_abiertas().indexOf(b);
-			u.getPromos_abiertas().remove(index);
+			int index= usuario.getPromos_abiertas().indexOf(b);
+			usuario.getPromos_abiertas().remove(index);
 		}
 		
 		}
@@ -546,7 +557,8 @@ public class DataAccess  {
 		Apuesta apuesta = new Apuesta (pronostico,usuario,cant);
 
 		if (u.getSaldo() >= cantidad) {
-			if (p.getPregunta().getMinBet() < cant) {
+			if ((p.getPregunta().getMinBet()) < cant) {
+				System.out.println(p.getPregunta().getMinBet());
 				u.anadirApuesta(apuesta);
 				p.anadirApuesta(apuesta);
 				u.actualizarSaldo(-cantidad);

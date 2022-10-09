@@ -1,5 +1,6 @@
 package test.dataAccess;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,6 +12,7 @@ import javax.persistence.TypedQuery;
 
 import configuration.ConfigXML;
 import domain.*;
+import gui.IniciarSesionGUI;
 
 public class TestDataAccess {
 	protected  EntityManager  db;
@@ -171,4 +173,111 @@ public class TestDataAccess {
 		db.remove(p1);
 		db.getTransaction().commit();
 	}
+	
+	public int crearPronostico(Pronostico pronos){
+
+		db.getTransaction().begin();
+		Pronostico pr=pronos;
+		db.persist(pr);	
+		db.getTransaction().commit();
+		return 0;
+	}
+	
+	public void borrarPronostico(Pronostico u) {
+		db.getTransaction().begin();
+		Pronostico p1=db.find(Pronostico.class, u);
+		db.remove(p1);
+		db.getTransaction().commit();
+	}
+	
+	
+	public int crearApuesta(Pronostico pronostico, Usuario usuario, double cantidad) {
+
+		this.open();
+		ArrayList<Promocion> promo= new ArrayList<Promocion>();
+		double cant=cantidad;
+		db.getTransaction().begin();
+
+
+		Usuario u = db.find(Usuario.class, usuario.getNombreUsuario());
+		Pronostico p = db.find(Pronostico.class, pronostico.getId());
+		
+		if(u==null | p==null) return 4;
+
+		if(!u.getPromos_abiertas().isEmpty()) {
+			
+		for(Promocion e: u.getPromos_abiertas()) {
+			if(e.getCompeticion().getId().equals(p.getPregunta().getEvento().getComp().getId())) {
+				promo.add(e);
+			}
+		}
+		
+		
+		for(Promocion b: promo) {
+			if(!b.isTipo()) {
+				double aux2=b.getCant();
+				cant=(cantidad + aux2);	
+			}
+			else {
+				double aux= b.getCant();
+				cant =(cantidad + (cantidad*(aux/100.0)));
+			}
+			int index= u.getPromos_abiertas().indexOf(b);
+			u.getPromos_abiertas().remove(index);
+		}
+		
+		}
+		
+		Apuesta apuesta = new Apuesta (pronostico,usuario,cant);
+
+		if (u.getSaldo() >= cantidad) {
+			if (p.getPregunta().getMinBet() < cant) {
+				u.anadirApuesta(apuesta);
+				p.anadirApuesta(apuesta);
+				u.actualizarSaldo(-cantidad);
+				db.persist(apuesta);
+				db.persist(u);
+				IniciarSesionGUI.cambiarActor(u);
+				db.getTransaction().commit();
+				return 0;
+			} else {
+				db.getTransaction().rollback();
+				return 1;
+			} 
+		}else {
+			db.getTransaction().rollback();
+			return 2;
+		}
+
+
+	}
+
+
+	public void borrarApuesta(Apuesta apuesta) {
+		db.getTransaction().begin();
+		Apuesta p1=db.find(Apuesta.class, apuesta);
+		db.remove(p1);
+		db.getTransaction().commit();
+		
+	}
+
+
+	public void anadirPregunta(Pregunta pr) {
+		db.getTransaction().begin();
+		Pregunta pre=pr;
+		db.persist(pre);	
+		db.getTransaction().commit();
+		
+	}
+
+
+	public void borrarPregunta(Pregunta pr) {
+		db.getTransaction().begin();
+		Pregunta p1=db.find(Pregunta.class, pr);
+		db.remove(p1);
+		db.getTransaction().commit();
+		
+		
+	}
+
 }

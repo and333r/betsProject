@@ -69,6 +69,12 @@ public class Competicion {
 		
 	}
 	
+	public Competicion(String id, String nombre){
+		this.id=id;
+		this.nombre=nombre;
+		
+	}
+	
 	//getters y setters:
 	public void setEventos() {
 		this.eventos = new Vector<Evento>();
