@@ -56,6 +56,7 @@ public class TestDataAccess {
 	
 	public int aplicarPromocion(String text, Usuario actor) {
 		try {
+
 		TypedQuery<Promocion> query = db.createQuery("SELECT p FROM Promocion p",Promocion.class);
 		query.setParameter(1, text);
 
@@ -71,7 +72,6 @@ public class TestDataAccess {
 				if (a.getDNI().equals(actor.getDNI())) return 1;
 			}
 			
-			db.getTransaction().begin();
 			Promocion mod= db.find(Promocion.class, resul);
 			if(mod.getNum_veces()<=0) return 2;
 			mod.setNum_veces(mod.getNum_veces()-1);

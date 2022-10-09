@@ -1,6 +1,7 @@
 
 
 import domain.*;
+
 import test.dataAccess.TestDataAccess;
 
 import  static org.junit.Assert.assertEquals;
@@ -39,28 +40,27 @@ public class AplicarPromocionDAWTest {
 		 public void test3() {
 			 
 			 try {
-			 Promocion p = new Promocion("0");
+			 Promocion p = new Promocion("0",0);
 			 ArrayList<Promocion> promociones = new ArrayList <Promocion>();
 			 promociones.add(p);
-			 String text = "a";
+			 String text = "ab";
 			 ArrayList<Usuario> users = new ArrayList <Usuario>();
-			 Usuario u = new Usuario("0");
+			 Usuario u = new Usuario("03");
 			 users.add(u);
 			 
 			 Promocion p2 = new Promocion(text, 0);
-			 Usuario u1 = new Usuario("A", promociones);
+			 Usuario u1 = new Usuario("A012345", promociones);
 			 
 			 testDA.open();
-			 testDA.borrarPromocion(p2);
-			 testDA.borrarUsuario(u1);
+			 //testDA.borrarPromocion(p2);
 			 testDA.anadirPromocion(p2);
+			 //testDA.borrarUsuario(u1);
 			 testDA.anadirUsuario(u1);
+			
+			 
+			 int resul = testDA.aplicarPromocion(text, u1);
 			 testDA.close();
-			 
-			 int resul = sut.aplicarPromocion(text, u1);
-			 
 			 assertEquals(2,resul);
-				assertTrue(true);
 				
 				testDA.open();
 				testDA.borrarPromocion(p2);
