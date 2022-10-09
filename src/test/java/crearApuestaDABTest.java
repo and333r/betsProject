@@ -1,15 +1,15 @@
 import static org.junit.Assert.*;
 
+
 import java.util.ArrayList;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import dataAccess.DataAccess;
 import domain.*;
 import test.dataAccess.TestDataAccess;
 
-public class crearApuestaDAWTest {
+public class crearApuestaDABTest {
 	
 	DataAccess sut = new DataAccess();
 	TestDataAccess testDA = new TestDataAccess();
@@ -105,12 +105,15 @@ public class crearApuestaDAWTest {
 			
 			testDA.open();
 			u5.setSaldo(500);
+			//testDA.borrarUsuario(u5);
 			testDA.anadirUsuario(u5);
 			p5.setMinBet(2);
 			Pregunta pr= new Pregunta("Pregunta2");
 			p5.setPregunta(pr);
+			//testDA.borrarPregunta(pr);
 			testDA.anadirPregunta(pr);
 			p5.getPregunta().setMinBet(1);
+			//testDA.borrarPronostico(p5);
 			testDA.crearPronostico(p5);
 			Apuesta apuesta = new Apuesta (p5,u5,500);
 						
@@ -138,7 +141,7 @@ public class crearApuestaDAWTest {
 	
 	
 	@Test
-	public void test4() { //User promos apuesta más de lo que tiene
+	public void test4() { //User sin promociones sobre el pronóstico apuesta mas de lo que tiene
 		try {
 			
 			 ArrayList<Promocion> promos = new ArrayList<Promocion>();
@@ -148,7 +151,8 @@ public class crearApuestaDAWTest {
 			
 			testDA.open();
 			u0.setSaldo(0);
-
+			//testDA.borrarUsuario(u0);
+			//testDA.borrarPronostico(p0);
 			
 			Promocion promoPremier= new Promocion("222", "Premier League");
 			u0.anadirPromo(promoPremier);
@@ -176,7 +180,7 @@ public class crearApuestaDAWTest {
 	}
 	
 	@Test
-	public void test5() { //User promos apuesta más de lo que tiene
+	public void test5() { //User con promociones sobre el pronóstico tiene prmocion de tipo porcentual
 		try {
 			
 			 ArrayList<Promocion> promos = new ArrayList<Promocion>();
@@ -190,7 +194,7 @@ public class crearApuestaDAWTest {
 			p6.setPregunta(pr);
 			testDA.anadirPregunta(pr);
 			p6.getPregunta().setMinBet(1);
-			
+
 			Promocion promoPremier= new Promocion("22772", "La Liga Santander");
 			promoPremier.setTipo(true);
 			u6.anadirPromo(promoPremier);
@@ -221,7 +225,7 @@ public class crearApuestaDAWTest {
 	}
 	
 	@Test
-	public void test6() { //User promos apuesta más de lo que tiene
+	public void test6() { //User con promociones sobre el pronóstico tiene prmocion de tipo entero
 		try {
 			
 			 ArrayList<Promocion> promos = new ArrayList<Promocion>();
@@ -235,8 +239,6 @@ public class crearApuestaDAWTest {
 			p6.setPregunta(pr);
 			testDA.anadirPregunta(pr);
 			p6.getPregunta().setMinBet(1);
-
-			
 			Promocion promoPremier= new Promocion("2882772", "La Liga Santander");
 			promoPremier.setTipo(false);
 			u6.anadirPromo(promoPremier);
@@ -267,4 +269,82 @@ public class crearApuestaDAWTest {
 		}
 	}
 	
+	@Test
+	public void test7() { //Cantidad negativa
+		
+		try {
+		
+		ArrayList<Promocion> promos = new ArrayList<Promocion>();
+		Usuario u7 = new Usuario("Ander7", promos);
+		Pronostico p7= new Pronostico("777777", "La Liga Santander");
+		testDA.open();
+		testDA.anadirUsuario(u7);
+		testDA.crearPronostico(p7);
+		testDA.close();
+		
+		int res = sut.crearApuesta(p7, u7,-47);
+		
+		assertEquals(res,4);
+		
+		testDA.open();
+		testDA.borrarUsuario(u7);
+		testDA.borrarPronostico(p7);
+		testDA.close();
+		}
+		
+		catch(Exception e){
+			fail();
+		}
+		
+		
+		
+	}
+	
+	@Test
+	public void test8() { //Usuario null
+		try {
+		Usuario u8 = null;
+		Pronostico p8= new Pronostico("888888", "La Liga Santander");
+		testDA.open();
+		testDA.crearPronostico(p8);
+		testDA.close();
+		
+		int res = sut.crearApuesta(p8, u8,-47);
+		
+		assertEquals(res,4);
+		
+		testDA.open();
+		testDA.borrarPronostico(p8);
+		testDA.close();
+		}
+		catch(Exception e) {
+			assertTrue(true);
+		}
+		
+	}
+	
+	@Test
+	public void test9() { //Pronostico nullc
+		try {
+		Usuario u9 = new Usuario("Ander9", promos);;
+		Pronostico p9= null;
+		testDA.open();
+		testDA.crearPronostico(p9);
+		testDA.close();
+		
+		int res = sut.crearApuesta(p9, u9,-47);
+		
+		assertEquals(res,4);
+		
+		testDA.open();
+		testDA.borrarPronostico(p9);
+		testDA.close();
+		}
+		catch(Exception e) {
+			assertTrue(true);
+		}
+		
+	}
+	
+		
 }

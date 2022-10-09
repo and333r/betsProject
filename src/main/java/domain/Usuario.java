@@ -56,6 +56,10 @@ public class Usuario extends Actor{
 		return this.promos_abiertas;
 	}
 
+	public void setPromos_abiertas(ArrayList<Promocion> e) {
+		this.promos_abiertas=e;
+	}
+	
 	public double getSaldo() {
 		return saldo;
 	}

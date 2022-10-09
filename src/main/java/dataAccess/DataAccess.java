@@ -527,11 +527,11 @@ public class DataAccess  {
 		
 		Usuario u= this.obtenerUsuarioDeseado(usuario);
 		
-				Pronostico p = db.find(Pronostico.class, pronostico.getId());
+		Pronostico p = db.find(Pronostico.class, pronostico.getId());
 		
-		if(u==null | p==null) return 4;
+		if(u==null | p==null | cantidad < 0.0) return 4;
 
-		if(!u.getPromos_abiertas().isEmpty()) {
+		if(!usuario.getPromos_abiertas().isEmpty()) {
 		for(Promocion e: usuario.getPromos_abiertas()) {
 			if(p.getComp().equals(e.getNombreComo())) {
 				promo.add(e);
@@ -555,7 +555,8 @@ public class DataAccess  {
 		}
 		
 		Apuesta apuesta = new Apuesta (pronostico,usuario,cant);
-
+		u.setPromos_abiertas(usuario.getPromos_abiertas());
+		
 		if (u.getSaldo() >= cantidad) {
 			if ((p.getPregunta().getMinBet()) < cant) {
 				System.out.println(p.getPregunta().getMinBet());
