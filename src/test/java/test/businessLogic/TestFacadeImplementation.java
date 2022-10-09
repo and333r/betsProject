@@ -1,4 +1,4 @@
-package test;
+package test.businessLogic;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,6 +9,7 @@ import javax.persistence.Persistence;
 
 import configuration.ConfigXML;
 import domain.*;
+import test.dataAccess.TestDataAccess;
 
 public class TestFacadeImplementation {
 	

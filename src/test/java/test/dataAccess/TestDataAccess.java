@@ -1,4 +1,4 @@
-package test;
+package test.dataAccess;
 
 import java.util.HashMap;
 import java.util.List;

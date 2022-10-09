@@ -1,4 +1,4 @@
-package test;
+
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -10,6 +10,7 @@ import org.junit.Test;
 import dataAccess.DataAccess;
 import domain.Promocion;
 import domain.Usuario;
+import test.dataAccess.TestDataAccess;
 
 public class AplicarPromocionDABTest {
 	
