@@ -5,6 +5,7 @@ import test.dataAccess.TestDataAccess;
 
 import  static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 
@@ -50,6 +51,8 @@ public class AplicarPromocionDAWTest {
 			 Usuario u1 = new Usuario("A", promociones);
 			 
 			 testDA.open();
+			 testDA.borrarPromocion(p2);
+			 testDA.borrarUsuario(u1);
 			 testDA.anadirPromocion(p2);
 			 testDA.anadirUsuario(u1);
 			 testDA.close();
@@ -65,7 +68,9 @@ public class AplicarPromocionDAWTest {
 				testDA.close();
 				
 			 } catch(Exception e) {
-				 System.out.println(e.getMessage());
+				 e.printStackTrace();
+				 System.out.println();
+				 fail();
 			 } 
 			 	 
 		 }
@@ -104,7 +109,7 @@ public class AplicarPromocionDAWTest {
 				testDA.close();
 				
 			 } catch(Exception e) {
-				 System.out.println(e.getMessage());
+				fail();
 			 } 
 			 	 
 		 }
@@ -142,7 +147,7 @@ public class AplicarPromocionDAWTest {
 				testDA.close();
 				
 			 } catch(Exception e) {
-				 System.out.println(e.getMessage());
+				fail();
 			 } 
 			 	 
 		 }

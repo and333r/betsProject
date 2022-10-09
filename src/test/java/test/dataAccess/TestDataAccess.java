@@ -152,17 +152,18 @@ public class TestDataAccess {
 
 	public void anadirPromocion(Promocion p) {
 		db.getTransaction().begin();
-		Promocion pr = db.find(Promocion.class, p.getId());
+		Promocion pr = p;
 		db.persist(pr);
 		db.getTransaction().commit();
 	}
 	
 	public void anadirUsuario(Usuario u) {
 		db.getTransaction().begin();
-		Usuario pr = db.find(Usuario.class, u.getNombreUsuario());
+		Usuario pr = u;
 		db.persist(pr);
 		db.getTransaction().commit();
 	}
+
 	
 	public void borrarUsuario(Usuario u) {
 		db.getTransaction().begin();
