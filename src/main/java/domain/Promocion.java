@@ -68,6 +68,19 @@ public class Promocion {
 		this.id = string;
 	}
 
+	public Promocion(String text, ArrayList<Usuario> users) {
+		this.code = "1";
+		this.code = text;
+		this.usuarios = users;
+		this.cant = 1;
+	}
+	
+	public Promocion(String text,int cant) {
+		this.id = "1";
+		this.code = text;
+		this.cant = cant;
+	}
+
 	public String getId() {
 		return id;
 	}

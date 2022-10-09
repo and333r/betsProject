@@ -40,6 +40,11 @@ public abstract class Actor {
 	
 	//getters y setters.
 	
+	public Actor(String string, String i) {
+		this.nombreUsuario = string;
+		this.DNI = i;
+	}
+
 	public String getNombreUsuario() {
 		return this.nombreUsuario;
 	}

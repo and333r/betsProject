@@ -998,7 +998,6 @@ public class DataAccess  {
 	}
 
 	public int aplicarPromocion(String text, Usuario actor) {
-		
 		try {
 		TypedQuery<Promocion> query = db.createQuery("SELECT p FROM Promocion p",Promocion.class);
 		query.setParameter(1, text);
