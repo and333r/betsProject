@@ -783,3 +783,38 @@ Type domain.InformeError is not enhanced.
 [2022-10-09 12:39:40 #11 type] 
 Type domain.Promocion is not enhanced.
 
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-10-09 13:02:06 #1 store] 
+Database '/Users/and333r/git/betsProject/src/main/resources/bets.temp' is opened by 1668@macbook-de-ander.home
+
+[2022-10-09 13:02:06 #2 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-10-09 13:02:06 #3 type] 
+Type domain.Actor is not enhanced.
+
+[2022-10-09 13:02:06 #4 type] 
+Type domain.Evento is not enhanced.
+
+[2022-10-09 13:02:06 #5 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-10-09 13:02:06 #6 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-10-09 13:02:06 #7 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-10-09 13:02:06 #8 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-10-09 13:02:06 #9 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-10-09 13:02:06 #10 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-10-09 13:02:06 #11 type] 
+Type domain.Promocion is not enhanced.
+
