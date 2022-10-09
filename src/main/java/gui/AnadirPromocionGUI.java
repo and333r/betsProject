@@ -29,6 +29,7 @@ public class AnadirPromocionGUI extends JFrame {
 	private int num_veces=0;
 	private boolean tipo=false;
 	private Competicion comp;
+	private final String seleccion = "SeleccionaOpcion";
 	
 	
 	
@@ -39,6 +40,7 @@ public class AnadirPromocionGUI extends JFrame {
 		setBounds(600, 250,600, 340);
 		getContentPane().setLayout(null);
 		
+	
 		   //TODO Etiquetas
 			//TODO desde la iteracion 1. TODOS LOS ELEMENTOS DE JFRAME QUE SEAN DISPLAYEABLES TIENEN QUE SER ATRIBUTOS DE LA CLASE, ni caso
 		
@@ -85,13 +87,13 @@ public class AnadirPromocionGUI extends JFrame {
 		
 		
 	    Vector<String> strings = new Vector<String>();
-		strings.add(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaOpcion"));
+		strings.add(ResourceBundle.getBundle("Etiquetas").getString(seleccion));
 		strings.add("Si"); 
 		strings.add("No");
 		comboBoxSiONo.setModel(new DefaultComboBoxModel<String>(strings));
 		comboBoxSiONo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (!comboBoxSiONo.getSelectedItem().equals(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaOpcion"))){
+				if (!comboBoxSiONo.getSelectedItem().equals(ResourceBundle.getBundle("Etiquetas").getString(seleccion))){
 					if(comboBoxSiONo.getSelectedItem().equals("Si")) {
 						lblNewLabelComp.setVisible(true);
 						comboBoxComp.setVisible(true);
@@ -137,13 +139,13 @@ public class AnadirPromocionGUI extends JFrame {
 		
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 		 Vector<String> string = new Vector<String>();
-			string.add(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaOpcion"));
+			string.add(ResourceBundle.getBundle("Etiquetas").getString(seleccion));
 			string.add("Si"); 
 			string.add("No");
 			comboBox.setModel(new DefaultComboBoxModel<String>(string));
 		comboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (!comboBox.getSelectedItem().equals(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaOpcion"))){
+				if (!comboBox.getSelectedItem().equals(ResourceBundle.getBundle("Etiquetas").getString(seleccion))){
 					if(comboBox.getSelectedItem().equals("Si")) {
 						tipo=true;
 					}
@@ -206,7 +208,7 @@ public class AnadirPromocionGUI extends JFrame {
 		
 		Vector<Competicion>competi= facade.obtenerCompeticiones();
 		Vector<String> nombre = new Vector<String>();
-		nombre.add(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaOpcion"));
+		nombre.add(ResourceBundle.getBundle("Etiquetas").getString(seleccion));
 		for (Competicion c:competi) {
 			nombre.add(c.getNombre());
 		}
@@ -214,7 +216,7 @@ public class AnadirPromocionGUI extends JFrame {
 		
 		comboBoxComp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (!comboBoxComp.getSelectedItem().equals(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaOpcion"))) {
+				if (!comboBoxComp.getSelectedItem().equals(ResourceBundle.getBundle("Etiquetas").getString(seleccion))) {
 					comp= facade.obtenerCompeticionPorNombre(comboBoxComp.getSelectedItem().toString());
 				}
 				textFieldCant.setVisible(true);

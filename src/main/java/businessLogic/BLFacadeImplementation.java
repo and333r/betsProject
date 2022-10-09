@@ -1,10 +1,8 @@
 package businessLogic;
-import java.awt.event.ActionEvent;
-import java.time.LocalDateTime;
+
 
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.Vector;
 
@@ -15,10 +13,8 @@ import configuration.ConfigXML;
 import configuration.UtilDate;
 import dataAccess.DataAccess;
 import domain.*;
-import exceptions.EventFinished;
 import exceptions.EventoNoExistenteException;
 import exceptions.PreguntaNoExistenteException;
-import exceptions.QuestionAlreadyExist;
 import gui.IniciarSesionGUI;
 
 /**
@@ -75,7 +71,7 @@ public class BLFacadeImplementation  implements BLFacade {
 	 * @param email
 	 * @param saldo
 	 * @param admin :especifica si la bd tiene que crear un actor usuario o un actor admin (true: admin)
-	 * @return 0: Todo correcto; 1: Fecha es incorrecta; 2: Saldo es negativo
+	 * @return 0: Todx correcto; 1: Fecha es incorrecta; 2: Saldo es negativo
 	 */
 	public int registrarUsuario(String id, String DNI, String Nombre, String Apellido1, String Apellido2, Date fechaN, String contrasena, char sexo, String email,String tlfn, boolean admin) {
 
@@ -249,7 +245,7 @@ public class BLFacadeImplementation  implements BLFacade {
 		
 		dbManager.open(false);
 		
-		if(pronostico==null | usuario==null |cantidad<0) return -1; //Algo ha salido mal
+		if(pronostico==null || usuario==null ||cantidad<0) return -1; //Algo ha salido mal
 		
 		if (!this.existeApuesta(pronostico.getId()+"_"+usuario.getNombreUsuario())) {//comprobacion de existenca 
 			switch(dbManager.crearApuesta(pronostico, usuario, cantidad)) {

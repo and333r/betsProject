@@ -58,26 +58,10 @@ public class DataAccess  {
 
 			Evento ev1 = new Evento("Atl�tico-Athletic", UtilDate.newDate(year,month,17),laLigaSantander,"", admin);
 			Evento ev2 = new Evento( "Eibar-Barcelona", UtilDate.newDate(year,month,17),laLigaSantander,"", admin);
-			/*			Evento ev3 = new Evento( "Getafe-Celta", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
-			Evento ev4 = new Evento( "Alav�s-Deportivo", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
-			Evento ev5 = new Evento("Espa�ol-Villareal", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
-			Evento ev6 = new Evento( "Las Palmas-Sevilla", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
-			Evento ev7 = new Evento( "Malaga-Valencia", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
-			Evento ev8 = new Evento("Girona-Legan�s", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
-			Evento ev9 = new Evento( "Real Sociedad-Levante", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
-			Evento ev10 = new Evento( "Betis-Real Madrid", UtilDate.newDate(year,month,17),LaLigaSantander,"", admin);
-			 */
+
 			laLigaSantander.anadirEvento(ev1);
 			laLigaSantander.anadirEvento(ev2);
-			/*			LaLigaSantander.anadirEvento(ev3);
-			LaLigaSantander.anadirEvento(ev4);
-			LaLigaSantander.anadirEvento(ev5);
-			LaLigaSantander.anadirEvento(ev6);
-			LaLigaSantander.anadirEvento(ev7);
-			LaLigaSantander.anadirEvento(ev8);
-			LaLigaSantander.anadirEvento(ev9);
-			LaLigaSantander.anadirEvento(ev10);
-			 */
+		
 			Pregunta p1;
 			Pregunta p2;
 			Pregunta p3;
@@ -138,37 +122,6 @@ public class DataAccess  {
 			p4.anadirPronostico(pro11);
 			p4.anadirPronostico(pro12);
 
-			/*
-			//Anadir preguntas
-			db.persist(p1);
-			db.persist(p2);
-			db.persist(p3);
-			db.persist(p4);
-			db.persist(p5);
-			db.persist(p6); 
-
-			//Anadir Evetos
-			db.persist(ev1);
-			db.persist(ev2);
-			db.persist(ev3);
-			db.persist(ev4);
-			db.persist(ev5);
-			db.persist(ev6);
-			db.persist(ev7);
-			db.persist(ev8);
-			db.persist(ev9);
-			db.persist(ev10);
-			db.persist(ev11);
-			db.persist(ev12);
-			db.persist(ev13);
-			db.persist(ev14);
-			db.persist(ev15);
-			db.persist(ev16);
-			db.persist(ev17);
-			db.persist(ev18);
-			db.persist(ev19);
-			db.persist(ev20);	
-			 */
 
 			//Anadir competiciones
 			db.persist(laLigaSantander);//
@@ -186,72 +139,6 @@ public class DataAccess  {
 		}
 	}
 
-	/**
-	 * This method creates a question for an event, with a question text and the minimum bet
-	 * 
-	 * @param event to which question is added
-	 * @param question text of the question
-	 * @param betMinimum minimum quantity of the bet
-	 * @return the created question, or null, or an exception
-	 * @throws QuestionAlreadyExist if the same question already exists for the event
-	 *//*
-	public Pregunta createQuestion(Evento event, String question, float betMinimum) throws  QuestionAlreadyExist {
-
-		System.out.println(">> DataAccess: createQuestion=> event= "+event+" question= "+question+" betMinimum="+betMinimum);
-
-		Evento ev;
-		try {
-			ev = db.find(Evento.class, event.getNombre());
-			Pregunta p = db.find(Pregunta.class,question);
-			db.getTransaction().begin();
-			ev.anadirPregunta(p);
-			db.persist(ev);
-			db.getTransaction().commit();
-			return p;
-		} catch (Exception e) {
-			throw new QuestionAlreadyExist(ResourceBundle.getBundle("Etiquetas").getString("ErrorQueryAlreadyExist"));
-			//e.printStackTrace();
-		}
-
-
-
-		//if (ev.DoesQuestionExists(question)) throw new QuestionAlreadyExist(ResourceBundle.getBundle("Etiquetas").getString("ErrorQueryAlreadyExist"));
-
-
-		//Question q = ev.addQuestion(question, betMinimum);
-		//db.persist(q);
-		//db.persist(ev); // db.persist(q) not required when CascadeType.PERSIST is added in questions property of Event class
-		// @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
-		//db.getTransaction().commit();
-		//return q;
-
-	}
-	  */
-
-	/**
-	 * This method retrieves from the database the dates a month for which there are events
-	 * 
-	 * @param date of the month for which days with events want to be retrieved 
-	 * @return collection of dates
-	 */
-	/*public Vector<Date> getEventsMonth(Date date) {
-
-		System.out.println(">> DataAccess: getEventsMonth");
-		Vector<Date> res = new Vector<Date>();	
-
-		Date firstDayMonthDate= UtilDate.firstDayMonth(date);
-		Date lastDayMonthDate= UtilDate.lastDayMonth(date);
-
-		TypedQuery<Date> query = db.createQuery("SELECT DISTINCT ev.eventDate FROM Event ev WHERE ev.eventDate BETWEEN ?1 and ?2",Date.class);
-		query.setParameter(1, firstDayMonthDate);
-		query.setParameter(2, lastDayMonthDate);
-		List<Date> dates = query.getResultList();
-		for (Date d:dates){
-			System.out.println(d.toString());		 
-			res.add(d);
-		}
-		return res;
-	}*/
 
 
 	public void open(boolean initializeMode){
