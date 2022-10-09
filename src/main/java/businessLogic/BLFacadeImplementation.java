@@ -248,10 +248,13 @@ public class BLFacadeImplementation  implements BLFacade {
 	public int crearApuesta(Pronostico pronostico, Usuario usuario, double cantidad) { 
 		
 		dbManager.open(false);
-		if (!this.existeApuesta(pronostico.getId()+"_"+usuario.getNombreUsuario())) { //comprobacion de existenca 
+		
+		if(pronostico==null | usuario==null |cantidad<0) return -1; //Algo ha salido mal
+		
+		if (!this.existeApuesta(pronostico.getId()+"_"+usuario.getNombreUsuario())) {//comprobacion de existenca 
 			switch(dbManager.crearApuesta(pronostico, usuario, cantidad)) {
 			case 0:
-				dbManager.close();
+				dbManager.close();//La apuesta se ha realizado bien
 				return 0;
 			case 1:
 				dbManager.close();
@@ -259,11 +262,8 @@ public class BLFacadeImplementation  implements BLFacade {
 			case 2:
 				dbManager.close();
 				return 1; //saldo insuficiente
-			case 3:
-				dbManager.close();
-				return 5;
 			default:
-				return -1;
+				return -1; //Algo ha salido mal
 			}
 
 		}else {

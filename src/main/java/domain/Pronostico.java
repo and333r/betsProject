@@ -81,6 +81,11 @@ public class Pronostico {
 		return pregunta;
 	}
 	
+	public void setRespuestaPregunta(String respuesta, Pregunta pregunta) {
+		this.respuesta=respuesta;
+		this.pregunta=pregunta;
+	}
+	
 	public double getGanancia() {
 		return ganancia;
 	}
@@ -113,10 +118,11 @@ public class Pronostico {
 			return false;
 		
 		Pronostico pronostico = (Pronostico) obj;
-		
-		return (this.pregunta.equals(pronostico.getPregunta()) && pronostico.getRespuesta().equals(this.respuesta));
+
+		return (this.id==pronostico.getId());
 	}
 
+	
 	public void anadirApuesta(Apuesta apuesta) {
 		this.apuestas.add(apuesta);
 		
