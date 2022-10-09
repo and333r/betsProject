@@ -6,7 +6,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 /**
- * Información de un usuario de la aplicación.
+ * Informaciï¿½n de un usuario de la aplicaciï¿½n.
  * @author Markel Barrena.
  * 23/02/2022
  */
@@ -14,7 +14,7 @@ import javax.persistence.*;
 @Entity
 public class Usuario extends Actor{
 	
-	private double saldo; //unidades monetarias ingresadas en la aplicación.
+	private double saldo; //unidades monetarias ingresadas en la aplicaciï¿½n.
 	
 	@OneToMany (cascade = CascadeType.PERSIST)
 	private ArrayList<Apuesta> apuestas;
@@ -33,6 +33,15 @@ public class Usuario extends Actor{
 		this.promos_abiertas= new ArrayList<Promocion>();
 		this.antiguasContrasenas = new ArrayList<String>();
 		this.antiguosCorreosElectronicos = new ArrayList<String>();
+	}
+
+	public Usuario(String string, ArrayList<Promocion> arrayList) {
+		super(string,"12345678N");
+		this.promos_abiertas = arrayList;
+	}
+
+	public Usuario(String string) {
+		super(string, "12345678N");
 	}
 
 	public void anadirPromo (Promocion user) {
@@ -63,7 +72,7 @@ public class Usuario extends Actor{
 	//fin getters y setters.
 	
 	/**
-	 * Actualiza el saldo sumándole la cantidad de entrada.
+	 * Actualiza el saldo sumï¿½ndole la cantidad de entrada.
 	 * @param cantidad la cantidad que se le suma (negativa si se va a sustraer).
 	 */
 	public void actualizarSaldo(double cantidad) {
@@ -80,12 +89,12 @@ public class Usuario extends Actor{
 	}
 	
 	/**
-	 * Devuelve la información del usuario en un string.
+	 * Devuelve la informaciï¿½n del usuario en un string.
 	 */
 	public String toString() {
 		return (this.getNombreUsuario()+": "+this.getNombre()+", "+this.getApellido1()+", "+this.getApellido2()+
 				".\n\tDni: "+this.getDNI()+"\n\tFecha de nacimiento: "+this.getFechaN().toString()+"\n\tEmail: "+
-				this.getEmail()+"\n\tNúmero de teléfono: "+this.getNumTel()+"\n\tSaldo: "+this.saldo+"\n");
+				this.getEmail()+"\n\tNï¿½mero de telï¿½fono: "+this.getNumTel()+"\n\tSaldo: "+this.saldo+"\n");
 	}
 	
 	public ArrayList<String> getContrasenasAntiguas() {
