@@ -31,16 +31,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="C:/Users/MIKEL/.m2/repository/org/mockito/mockito-all/1.9.5/mockito-all-1.9.5.jar" sourcepath="C:/Users/MIKEL/.m2/repository/org/mockito/mockito-all/1.9.5/mockito-all-1.9.5-sources.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="test" value="true"/>
-			<attribute name="maven.groupId" value="org.mockito"/>
-			<attribute name="maven.artifactId" value="mockito-all"/>
-			<attribute name="maven.version" value="1.9.5"/>
-			<attribute name="maven.scope" value="test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/lab13-Mocks/lab13-mocks/libs/mockito-core-3.0.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
