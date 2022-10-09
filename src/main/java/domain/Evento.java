@@ -20,7 +20,7 @@ public class Evento {
 	
 	private String nombre;
 	private Date fecha;
-	private String descripcion; //descripción opcional.
+	private String descripcion; //descripcixn opcional.
 	@OneToOne 
 	private Competicion comp;
 	@OneToMany (cascade =CascadeType.PERSIST)
@@ -120,7 +120,7 @@ public class Evento {
 	
 	//fin getters y setters.
 	
-	/* ****de esto se encarga la lógica de negocio****
+	/* ****de esto se encarga la lxgica de negocio****
 	public boolean eventoExpirado() {
 		Date now= new Date();
 		return fecha.after(now);
@@ -139,8 +139,8 @@ public class Evento {
 	}
 	
 	/**
-	 * Añade una pregunta al evento.
-	 * @param pregunta la pregunta a añadir.
+	 * Axade una pregunta al evento.
+	 * @param pregunta la pregunta a axadir.
 	 */
 	public void anadirPregunta(Pregunta pregunta) {
 		

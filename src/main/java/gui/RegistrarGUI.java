@@ -18,7 +18,7 @@ public class RegistrarGUI extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	////
-	private boolean regAdmin= false; //true si se está registrando un administrador.
+	private boolean regAdmin= false; //true si se estx registrando un administrador.
 
 	public boolean getRegAdmin() {
 		return this.regAdmin;

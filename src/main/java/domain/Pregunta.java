@@ -18,8 +18,8 @@ public class Pregunta {//TODO consultar el bests que nos daban y volver a poner 
 	@OneToOne 
 	private Evento evento; 
 	@OneToMany (cascade = CascadeType.PERSIST)
-	private Vector<Pronostico> pronosticos; //pronósticos sobre la pregunta.
-	private Pronostico resultado; //pronóstico correcto: que coincide con el resultado real del evento.
+	private Vector<Pronostico> pronosticos; //pronxsticos sobre la pregunta.
+	private Pronostico resultado; //pronxstico correcto: que coincide con el resultado real del evento.
 	
 	private double minBet; //apuesta minima a esta pregunta.
 	private boolean sugerencia; //true si es una segurencia, false si es un objeto definitivo
@@ -126,9 +126,9 @@ public class Pregunta {//TODO consultar el bests que nos daban y volver a poner 
 	//fin getters y setters.
 
 	/**
-	 * Devuelve el pronóstico que coincida con la respuesta de entrada.
-	 * @param respuesta la respuesta del pronóstico a buscar.
-	 * @return el pronóstico con el mismo enunciado.
+	 * Devuelve el pronxstico que coincida con la respuesta de entrada.
+	 * @param respuesta la respuesta del pronxstico a buscar.
+	 * @return el pronxstico con el mismo enunciado.
 	 */
 	public Pronostico buscarPronosticoPorRespuesta(String respuesta) {
 		for(Pronostico p: pronosticos) {
@@ -138,8 +138,8 @@ public class Pregunta {//TODO consultar el bests que nos daban y volver a poner 
 	}
 
 	/**
-	 * Añade un pronóstico al evento.
-	 * @param pronóstico el pronóstico a añadir.
+	 * Axade un pronxstico al evento.
+	 * @param pronxstico el pronxstico a axadir.
 	 */
 	public void anadirPronostico(Pronostico pronostico) {
 
@@ -147,8 +147,8 @@ public class Pregunta {//TODO consultar el bests que nos daban y volver a poner 
 	}
 
 	/**
-	 * Elimina el pronóstico de entrada.
-	 * @param pronostico el pronóstico a eliminar.
+	 * Elimina el pronxstico de entrada.
+	 * @param pronostico el pronxstico a eliminar.
 	 */
 	public void eliminarPronostico(Pronostico pronostico) {
 

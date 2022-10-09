@@ -13,7 +13,7 @@ public class InformeError {
 	private String id;
 	private String titulo;
 	private String descripcion;
-	private boolean resuelto; //true si está resuelto.
+	private boolean resuelto; //true si estx resuelto.
 	private Date fechaInforme;
 	private Date fechaResuelto;
 
