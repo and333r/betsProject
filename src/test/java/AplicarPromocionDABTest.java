@@ -3,6 +3,7 @@
 import static org.junit.Assert.assertEquals;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 
@@ -28,10 +29,20 @@ public class AplicarPromocionDABTest {
 				
 				Usuario u1 = new Usuario("Mikel", new ArrayList<Promocion>());
 				String text = null;
-				testDA.aplicarPromocion(text, u1);
+				testDA.open();
+				testDA.anadirUsuario(u1);
+				testDA.close();
+				
+				int resul = sut.aplicarPromocion(text, u1);
+				assertEquals(3,resul);
+				
+				testDA.open();
+				testDA.borrarUsuario(u1);
+				testDA.close();
 				
 			}catch(NullPointerException e ) {
-				assertTrue(true);
+				e.printStackTrace();
+				fail();
 			} 
 	 }
 	 
@@ -42,10 +53,20 @@ public class AplicarPromocionDABTest {
 				
 				Usuario u1 = null;
 				String text = "a";
-				testDA.aplicarPromocion(text, u1);
+				testDA.open();
+				testDA.anadirUsuario(u1);
+				testDA.close();
+				
+				int resul = sut.aplicarPromocion(text, u1);
+				assertEquals(3,resul);
+				
+				testDA.open();
+				testDA.borrarUsuario(u1);
+				testDA.close();
 				
 			}catch(NullPointerException e ) {
-				assertTrue(true);
+				e.printStackTrace();
+				fail();
 			} 
 	 }
 	 
@@ -53,34 +74,33 @@ public class AplicarPromocionDABTest {
 	 public void test3() {
 		 
 		 try {
-		 Promocion p = new Promocion("0");
-		 ArrayList<Promocion> promociones = new ArrayList <Promocion>();
-		 promociones.add(p);
-		 String text = "a";
-		 ArrayList<Usuario> users = new ArrayList <Usuario>();
-		 Usuario u = new Usuario("0");
-		 users.add(u);
-		 
-		 Promocion p2 = new Promocion(text, 0);
-		 Usuario u1 = new Usuario("A", promociones);
+		String text = "a";
+		Promocion p = new Promocion("a",1);
+		Usuario u1 = new Usuario("Mikel", new ArrayList<Promocion>());
+		Usuario u2 = new Usuario("Lon", new ArrayList<Promocion>());
 		 
 		 testDA.open();
-		 testDA.anadirPromocion(p2);
+		 int comp = testDA.anadirPromocion(p);
+		 System.out.println(comp);
 		 testDA.anadirUsuario(u1);
+		 testDA.anadirUsuario(u2);
 		 testDA.close();
 		 
 		 int resul = sut.aplicarPromocion(text, u1);
+		 int resul2 = sut.aplicarPromocion(text, u2);
 		 
-		 assertEquals(2,resul);
-			assertTrue(true);
+		 assertEquals(2,resul2);
+			
 			
 			testDA.open();
-			testDA.borrarPromocion(p2);
 			testDA.borrarUsuario(u1);
+			testDA.borrarUsuario(u2);
+			testDA.borrarPromocion(p);
 			testDA.close();
 			
 		 } catch(Exception e) {
-			 System.out.println(e.getMessage());
+			 e.printStackTrace();
+			 fail();
 		 } 
 		 	 
 	 }

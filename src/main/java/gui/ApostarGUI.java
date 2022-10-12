@@ -61,7 +61,11 @@ public class ApostarGUI extends JFrame{
 	private Vector<Pregunta> preguntas;
 	private Vector<Pronostico> pronosticos;
 	BLFacadeImplementation facade = (BLFacadeImplementation) IniciarSesionGUI.getBusinessLogic();
-
+	
+	static final String etiquetas = "Etiquetas";
+	static final String a = "Tahoma";
+	static final String o = "SeleccionaOpcion";
+	
 	public ApostarGUI() {
 
 		this.setTitle("Hacer apuesta");
@@ -75,21 +79,21 @@ public class ApostarGUI extends JFrame{
 
 			}});
 
-		lblSlctComp = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaCompeticion"));
+		lblSlctComp = new JLabel(ResourceBundle.getBundle(etiquetas).getString("SeleccionaCompeticion"));
 		lblSlctComp.setBounds(10, 28, 185, 19);
 		getContentPane().add(lblSlctComp);
 
-		lblSlctEvent = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaEvento"));
+		lblSlctEvent = new JLabel(ResourceBundle.getBundle(etiquetas).getString("SeleccionaEvento"));
 		lblSlctEvent.setBounds(10, 58, 185, 19);
 		getContentPane().add(lblSlctEvent);
 		lblSlctEvent.setVisible(false);
 
-		lblSlctPreg = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaPregunta"));
+		lblSlctPreg = new JLabel(ResourceBundle.getBundle(etiquetas).getString("SeleccionaPregunta"));
 		lblSlctPreg.setBounds(10, 88, 185, 19);
 		getContentPane().add(lblSlctPreg);
 		lblSlctPreg.setVisible(false);
 
-		lblSlctPron = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaPronostico"));
+		lblSlctPron = new JLabel(ResourceBundle.getBundle(etiquetas).getString("SeleccionaPronostico"));
 		lblSlctPron.setBounds(10, 118, 185, 19);
 		getContentPane().add(lblSlctPron);
 		lblSlctPron.setVisible(false);
@@ -113,21 +117,21 @@ public class ApostarGUI extends JFrame{
 		getContentPane().add(comboBoxPronosticos);
 		comboBoxPronosticos.setVisible(false);
 
-		lblCuotaEs = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CuotaEs"));
-		lblCuotaEs.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblCuotaEs = new JLabel(ResourceBundle.getBundle(etiquetas).getString("CuotaEs"));
+		lblCuotaEs.setFont(new Font(a, Font.PLAIN, 14));
 		lblCuotaEs.setBounds(10, 165, 148, 19);
 		getContentPane().add(lblCuotaEs);
 		lblCuotaEs.setVisible(false);
 
 		lblNumCuota = new JLabel("New label");
 		lblNumCuota.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNumCuota.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNumCuota.setFont(new Font(a, Font.PLAIN, 14));
 		lblNumCuota.setBounds(205, 167, 133, 19);
 		getContentPane().add(lblNumCuota);
 		lblNumCuota.setVisible(false);
 
-		lblCantApuesta = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("IntroduceApuesta"));
-		lblCantApuesta.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblCantApuesta = new JLabel(ResourceBundle.getBundle(etiquetas).getString("IntroduceApuesta"));
+		lblCantApuesta.setFont(new Font(a, Font.PLAIN, 14));
 		lblCantApuesta.setBounds(10, 214, 275, 19);
 		getContentPane().add(lblCantApuesta);
 		lblCantApuesta.setVisible(false);
@@ -138,12 +142,12 @@ public class ApostarGUI extends JFrame{
 		textFieldCantApuesta.setColumns(10);
 		textFieldCantApuesta.setVisible(false);
 
-		btnApostar = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Apuesta"));
+		btnApostar = new JButton(ResourceBundle.getBundle(etiquetas).getString("Apuesta"));
 		btnApostar.setBounds(123, 261, 207, 35);
 		getContentPane().add(btnApostar);
 		btnApostar.setEnabled(false);
 
-		btnVolver = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Volver"));
+		btnVolver = new JButton(ResourceBundle.getBundle(etiquetas).getString("Volver"));
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -158,24 +162,24 @@ public class ApostarGUI extends JFrame{
 
 		competiciones = facade.obtenerCompeticiones();
 		Vector<String> strings = new Vector<String>();
-		strings.add(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaOpcion"));
+		strings.add(ResourceBundle.getBundle(etiquetas).getString(o));
 		for (Competicion c:competiciones) {
 			strings.add(c.getNombre());
 		}
 		comboBoxCompeticiones.setModel(new DefaultComboBoxModel<String>(strings));
 
-		lblErrores = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Vacio")); 
+		lblErrores = new JLabel(ResourceBundle.getBundle(etiquetas).getString("Vacio")); 
 		lblErrores.setBounds(10, 311, 328, 19);
 		getContentPane().add(lblErrores);
 
-		lblDineros = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("ApostarGUI.lblNewLabel.text"));
+		lblDineros = new JLabel(ResourceBundle.getBundle(etiquetas).getString("ApostarGUI.lblNewLabel.text"));
 		lblDineros.setVisible(false);
 		lblDineros.setBounds(377, 218, 61, 15);
 		getContentPane().add(lblDineros);
 
 		lblNoHay = new JLabel(); 
 		this.lblNoHay.setVisible(false);
-		lblNoHay.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNoHay.setFont(new Font(a, Font.PLAIN, 12));
 		lblNoHay.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNoHay.setBackground(Color.GRAY);
 		lblNoHay.setForeground(Color.RED);
@@ -190,7 +194,7 @@ public class ApostarGUI extends JFrame{
 				comboBoxPronosticos.setEnabled(false);
 				btnApostar.setEnabled(false);
 				
-				if (!comboBoxCompeticiones.getSelectedItem().equals(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaOpcion"))) {
+				if (!comboBoxCompeticiones.getSelectedItem().equals(ResourceBundle.getBundle(etiquetas).getString(o))) {
 
 					Competicion competicion = (Competicion) competiciones.get(comboBoxCompeticiones.getSelectedIndex() - 1);
 					eventos = (Vector<Evento>) facade.obtenerEventosAbiertosPorCompeticion(competicion);
@@ -204,7 +208,7 @@ public class ApostarGUI extends JFrame{
 						lblNoHay.setVisible(false);
 						Vector<String> strings = new Vector<String>();
 
-						strings.add(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaOpcion"));
+						strings.add(ResourceBundle.getBundle(etiquetas).getString(o));
 
 						for (Evento evento : eventos) 
 							strings.add(evento.getNombre());
@@ -227,7 +231,7 @@ public class ApostarGUI extends JFrame{
 				comboBoxPronosticos.setEnabled(false);
 				btnApostar.setEnabled(false);
 				
-				if (!comboBoxEventos.getSelectedItem().equals(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaOpcion"))) {
+				if (!comboBoxEventos.getSelectedItem().equals(ResourceBundle.getBundle(etiquetas).getString(o))) {
 
 					Evento evento = (Evento) eventos.get(comboBoxEventos.getSelectedIndex() - 1);
 					preguntas = (Vector<Pregunta>) facade.obtenerPreguntasAbiertasPorEvento(evento);
@@ -241,7 +245,7 @@ public class ApostarGUI extends JFrame{
 						lblNoHay.setVisible(false);
 						Vector<String> strings = new Vector<String>();
 
-						strings.add(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaOpcion"));
+						strings.add(ResourceBundle.getBundle(etiquetas).getString(o));
 
 						for (Pregunta pregunta : preguntas) 
 							strings.add(pregunta.getEnunciado());
@@ -264,7 +268,7 @@ public class ApostarGUI extends JFrame{
 				comboBoxPronosticos.setEnabled(false);
 				btnApostar.setEnabled(false);
 				
-				if(!comboBoxPreguntas.getSelectedItem().equals(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaOpcion"))) {
+				if(!comboBoxPreguntas.getSelectedItem().equals(ResourceBundle.getBundle(etiquetas).getString(o))) {
 					Pregunta pregunta = (Pregunta) preguntas.get(comboBoxPreguntas.getSelectedIndex() - 1);
 					pronosticos = (Vector<Pronostico>) facade.obtenerPronosticosDePregunta(pregunta);
 
@@ -276,7 +280,7 @@ public class ApostarGUI extends JFrame{
 						lblNoHay.setVisible(false);
 						Vector<String> strings = new Vector<String>();
 
-						strings.add(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaOpcion"));
+						strings.add(ResourceBundle.getBundle(etiquetas).getString(o));
 						for(Pronostico p:pronosticos) 
 							strings.add(p.getRespuesta());
 
@@ -294,7 +298,7 @@ public class ApostarGUI extends JFrame{
 		comboBoxPronosticos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				if(!comboBoxPronosticos.getSelectedItem().equals(ResourceBundle.getBundle("Etiquetas").getString("SeleccionaOpcion"))) {
+				if(!comboBoxPronosticos.getSelectedItem().equals(ResourceBundle.getBundle(etiquetas).getString(o))) {
 					lblCuotaEs.setVisible(true);
 					pronostico = (Pronostico) pronosticos.get(comboBoxPronosticos.getSelectedIndex() - 1);
 					lblNumCuota.setText(Double.toString(pronostico.getGanancia()));
@@ -315,12 +319,12 @@ public class ApostarGUI extends JFrame{
 				int resultado = facade.crearApuesta(pronostico,(Usuario) IniciarSesionGUI.actor(),Double.parseDouble(textFieldCantApuesta.getText()));
 				switch(resultado) {
 				case 0:
-					lblErrores.setText(ResourceBundle.getBundle("Etiquetas").getString("NuevaApuesta"));
+					lblErrores.setText(ResourceBundle.getBundle(etiquetas).getString("NuevaApuesta"));
 					lblErrores.setForeground(Color.GREEN);
 
 					break;
 				case 1:
-					lblErrores.setText(ResourceBundle.getBundle("Etiquetas").getString("SaldoInsuficiente"));
+					lblErrores.setText(ResourceBundle.getBundle(etiquetas).getString("SaldoInsuficiente"));
 					lblErrores.setForeground(Color.RED);
 					break;
 				case 2:
@@ -328,11 +332,11 @@ public class ApostarGUI extends JFrame{
 					abrirSeguroGUI();
 					break;
 				case 3: 
-					lblErrores.setText(ResourceBundle.getBundle("Etiquetas").getString("NoMasApuestas"));
+					lblErrores.setText(ResourceBundle.getBundle(etiquetas).getString("NoMasApuestas"));
 					lblErrores.setForeground(Color.RED);
 					break;
 				case 4:
-					lblErrores.setText(ResourceBundle.getBundle("Etiquetas").getString("CantidadInsuficiente"));
+					lblErrores.setText(ResourceBundle.getBundle(etiquetas).getString("CantidadInsuficiente"));
 					lblErrores.setForeground(Color.RED);
 					break;
 				default:

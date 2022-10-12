@@ -198,17 +198,16 @@ public class DataAccess  {
 	 * @param sexo (char): Masculino = 'M'; Femenino = 'F'; Otro = 'O'
 	 * @param admin :si es true est� registrando un administrador.
 	 */
-	public void registrarUsuario(String nombreUsuario, String Dni, String nombre, String apellido1, String apellido2, Date fechaNacimiento, String contrasena, char sexo, String email,String tlfn, boolean admin) {
+	public void registrarUsuario(ArrayList<String> datos, Date fechaNacimiento, char sexo, boolean admin) {
 
 		db.getTransaction().begin();
 
-		if(!admin) { //se a�ade un usuario
-			Actor a = new Usuario(nombreUsuario,Dni,nombre,apellido1,apellido2,fechaNacimiento,contrasena,sexo,email,tlfn);
+		if(!admin) { //se anade un usuario
+			Actor a = new Usuario(datos.get(0),datos.get(1),datos.get(2),datos.get(3),datos.get(4),fechaNacimiento,datos.get(5),sexo,datos.get(6),datos.get(7));
 			db.persist(a);
 		}
-		else { //se a�ade un administrador
-			Actor a = new Administrador(nombreUsuario,Dni,nombre,apellido1,apellido2,fechaNacimiento,contrasena,sexo,email,tlfn);
-			db.persist(a);
+		else { //se anade un administrador
+			Actor a = new Usuario(datos.get(0),datos.get(1),datos.get(2),datos.get(3),datos.get(4),fechaNacimiento,datos.get(5),sexo,datos.get(6),datos.get(7));			db.persist(a);
 		}
 
 		db.getTransaction().commit();
@@ -896,23 +895,39 @@ public class DataAccess  {
 
 		return apuestas;
 	}
+	
+	
+	public Promocion obtenerPromo (List<Promocion> promociones, String text) {
+		
+		Promocion resul= new Promocion("0");		
+		for(Promocion e: promociones) {
+			if(e.getCode().equals(text)) {
+			resul= e;
+			}
+		}	
+		return resul;
+	}
+	
+	public boolean promoUsada(Promocion resul, Usuario actor) {
+		
+		for (Usuario a: resul.getUsuarios()) {
+			if (a.getDNI().equals(actor.getDNI())) return true;
+		}
+		
+		return false;
+	}
 
 	public int aplicarPromocion(String text, Usuario actor) {
 		try {
+		
 		TypedQuery<Promocion> query = db.createQuery("SELECT p FROM Promocion p",Promocion.class);
 		query.setParameter(1, text);
-
 		List<Promocion> resultados = query.getResultList();
-		Promocion resul= new Promocion("0");
-		for(Promocion e: resultados) {
-			if(e.getCode().equals(text)) {
-				resul= e;
-			}
-		}
+
 		
-			for (Usuario a: resul.getUsuarios()) {
-				if (a.getDNI().equals(actor.getDNI())) return 1;
-			}
+		Promocion resul = this.obtenerPromo(resultados,text);
+		boolean usado = this.promoUsada(resul, actor);		
+		if(usado) return 1;
 			
 			db.getTransaction().begin();
 			Promocion mod= db.find(Promocion.class, resul);
@@ -921,11 +936,8 @@ public class DataAccess  {
 			Usuario user= db.find(Usuario.class, actor);
 			mod.anadirUsuario(user);
 
-			if(mod.getCompeticion()==null && !mod.isTipo()) {
-				
-				user.setSaldo(user.getSaldo()+mod.getCant());
-				
-			}else user.anadirPromo(mod);	
+			if(mod.getCompeticion()==null && !mod.isTipo()) user.setSaldo(user.getSaldo()+mod.getCant());
+			else user.anadirPromo(mod);	
 
 			db.persist(mod);
 			db.persist(user);
