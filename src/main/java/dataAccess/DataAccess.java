@@ -492,6 +492,8 @@ public class DataAccess  {
 		Pronostico p = this.obtenerPronostico(pronostico);
 		p.setMinBet(pronostico.getMinBet());
 		
+		if(cant<0) return 4;
+		
 		if(!u.getPromos_abiertas().isEmpty()) {
 			promo= this.buscarPromocionesEnU(u, p, cantidad);
 			cant= this.calcularPromociones(promo, cantidad);
