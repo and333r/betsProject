@@ -170,7 +170,7 @@ public class AplicarPromocionDABTest {
 		 System.out.println(resul);
 		 
 		 assertEquals(0,resul);
-			
+			 
 			
 			testDA.open();
 			testDA.borrarUsuario(u1);
