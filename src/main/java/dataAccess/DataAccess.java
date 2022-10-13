@@ -505,29 +505,23 @@ public class DataAccess  {
 		
 		int comprobacion= this.comprobarApuesta(u, p, cantidad, cant);
 		
-		switch(comprobacion) {
-			case 0:
-				u.anadirApuesta(apuesta);
-				p.anadirApuesta(apuesta);
-				u.actualizarSaldo(-cantidad);
-				db.persist(apuesta);
-				db.persist(u);
-				IniciarSesionGUI.cambiarActor(u);
-				db.getTransaction().commit();
-				return 0;
-				
-			case 1:
-				db.getTransaction().rollback();
-				return 1;
-			case 2:
-				db.getTransaction().rollback();
-				return 2;
-			default:
-				return -1;
+		if(comprobacion==0) {
+			u.anadirApuesta(apuesta);
+			p.anadirApuesta(apuesta);
+			u.actualizarSaldo(-cantidad);
+			db.persist(apuesta);
+			db.persist(u);
+			IniciarSesionGUI.cambiarActor(u);
+			db.getTransaction().commit();
+		}
+		else {
+			db.getTransaction().rollback();
+		}
+		return comprobacion;
 		}
 
 
-	}
+	
 
 
 	/**
