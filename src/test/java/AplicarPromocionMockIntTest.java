@@ -27,22 +27,28 @@ public class AplicarPromocionMockIntTest {
 	
 	@Test //Test para el funcionamiento correcto.
 	public void test0() {
-	try
-	{
+		 Promocion p = new Promocion("LaLiga ofer",new ArrayList<Usuario>(),2);
+			Usuario u1 = new Usuario("pablo", "12356789l", new ArrayList<Promocion>());
+			Usuario u2 = new Usuario("alejandra","12356789a", new ArrayList<Promocion>());
+			p.anadirUsuario(u2);
+		 
+		try {
+		 
+		 String text = "LaLiga ofer";
+		 
+			Mockito.when(db.anadirUsuario(u1)).thenReturn(true);
+			Mockito.when(db.anadirUsuario(u2)).thenReturn(true);
+			Mockito.when(db.anadirPromocion(p)).thenReturn(0);
+
+		 int resul = bl.aplicarPromocion(text, u1);
+		 System.out.println(resul);
+		 
+		 assertEquals(0,resul);
 		
-		Usuario u1 = new Usuario("Mikel", new ArrayList<Promocion>());
-		
-		Mockito.doReturn(0).when(db).aplicarPromocion("a",u1);
-		//Cuando forumDAO llama al metodo elegido, el mockito hace return del valor esperado (mirarlo bien)
-		
-	//System.out.println("forumDAO.addUserDAO(\"1234\",\"Jon\",\"654478722\")" +forumDAO.addUserDAO("1234","Jon","654478722"));
-	System.out.println("db.aplicarPromocion(a,u1) --> 0");
-	}
-	catch
-	(Exception e) {
-	
-	e.printStackTrace();
-	}
+		 } catch(Exception e) {
+			 e.printStackTrace();
+			 fail();
+		 } 
 	}
 	
 	@Test //test para cuando uno de los argumentos no esta en la bd.
@@ -73,17 +79,12 @@ public class AplicarPromocionMockIntTest {
 				
 				String text = null;
 				
-//				int resul = sut.aplicarPromocion(text, u1);
-//				assertEquals(3,resul);
-//				
-//				testDA.open();
-//				testDA.borrarUsuario(u1);
-//				testDA.close();
+				Mockito.when(db.anadirUsuario(u1)).thenReturn(true);
+				int resul = bl.aplicarPromocion(text, u1);
+				assertEquals(3,resul);
+				
 				
 			}catch(NullPointerException e ) {
-//				testDA.open();
-//				testDA.borrarUsuario(u1);
-//				testDA.close();
 				e.printStackTrace();
 				fail();
 			} 
