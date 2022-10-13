@@ -415,7 +415,7 @@ public class DataAccess  {
 	}
 	
 	
-	public ArrayList<Promocion> buscarYAplicarPromociones (Usuario us, Pronostico p, double cantidad) {
+	public ArrayList<Promocion> buscarPromocionesEnU (Usuario us, Pronostico p, double cantidad) {
 		
 		double cant=cantidad;
 		ArrayList<Promocion> promos = new ArrayList<Promocion>();
@@ -495,7 +495,7 @@ public class DataAccess  {
 		if(u==null | p==null | cantidad < 0.0) return 4;
 
 		if(!u.getPromos_abiertas().isEmpty()) {
-			promo= this.buscarYAplicarPromociones(u, p, cantidad);
+			promo= this.buscarPromocionesEnU(u, p, cantidad);
 			cant= this.calcularPromociones(promo, cantidad);
 			u.setPromos_abiertas(this.actualizarUsuarioP(u, promo));
 			
