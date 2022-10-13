@@ -207,7 +207,7 @@ public class DataAccess  {
 			db.persist(a);
 		}
 		else { //se anade un administrador
-			Actor a = new Usuario(datos.get(0),datos.get(1),datos.get(2),datos.get(3),datos.get(4),fechaNacimiento,datos.get(5),sexo,datos.get(6),datos.get(7));			db.persist(a);
+			Actor a = new Administrador(datos.get(0),datos.get(1),datos.get(2),datos.get(3),datos.get(4),fechaNacimiento,datos.get(5),sexo,datos.get(6),datos.get(7));			db.persist(a);
 		}
 
 		db.getTransaction().commit();
