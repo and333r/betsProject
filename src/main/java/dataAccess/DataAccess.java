@@ -466,10 +466,10 @@ public class DataAccess  {
 		
 	}
 	
-	public int comprobarApuesta(Usuario u, Pronostico p, double cantidad, double cant) {
+	public int comprobarApuesta(Usuario u, Pronostico p, double cantidad) {
 		 
 		if(u.getSaldo() >= cantidad) {
-			if((p.getPregunta().getMinBet())<cant) {
+			if((p.getPregunta().getMinBet())<cantidad) {
 				return 0;
 			}
 			return 1;
@@ -503,7 +503,7 @@ public class DataAccess  {
 		
 		Apuesta apuesta = new Apuesta (p,u,cant);
 		
-		int comprobacion= this.comprobarApuesta(u, p, cantidad, cant);
+		int comprobacion= this.comprobarApuesta(u, p, cantidad);
 		
 		if(comprobacion==0) {
 			u.anadirApuesta(apuesta);
