@@ -89,6 +89,13 @@ public class Promocion {
 		this.cant = cant;
 	}
 
+	public Promocion(String string, ArrayList<Usuario> arrayList, int i) {
+		this.id = string + i;
+		this.code = string;
+		this.usuarios = arrayList;
+		this.cant = i;
+	}
+
 	public String getId() {
 		return id;
 	}

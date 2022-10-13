@@ -1127,6 +1127,22 @@ public class DataAccess  {
 		return eventos;
 	}
 
+	public boolean anadirUsuario(Usuario u) {
+		db.getTransaction().begin();
+		Usuario pr = u;
+		db.persist(pr);
+		db.getTransaction().commit();
+		return true;
+	}
+	
+	public int anadirPromocion(Promocion p) {
+		db.getTransaction().begin();
+		Promocion pr = p;
+		db.persist(pr);
+		db.getTransaction().commit();
+		return 0;
+	}
+	
 	/*
 	 * public Vector<Evento> obtenerEventosPorCompeticion(Competicion competicion) {
 
