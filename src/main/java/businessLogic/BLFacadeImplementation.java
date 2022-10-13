@@ -4,6 +4,7 @@ package businessLogic;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Vector;
 
 import javax.jws.WebMethod;
@@ -73,7 +74,7 @@ public class BLFacadeImplementation  implements BLFacade {
 	 * @param admin :especifica si la bd tiene que crear un actor usuario o un actor admin (true: admin)
 	 * @return 0: Todx correcto; 1: Fecha es incorrecta; 2: Saldo es negativo
 	 */
-	public int registrarUsuario(String id, String DNI, String Nombre, String Apellido1, String Apellido2, Date fechaN, String contrasena, char sexo, String email,String tlfn, boolean admin) {
+	public int registrarUsuario(ArrayList<String> datos, Date fechaN, char sexo, boolean admin) {
 
 
 		dbManager.open(false);
@@ -81,10 +82,10 @@ public class BLFacadeImplementation  implements BLFacade {
 		Date fechaHoy = UtilDate.currentDate();
 		Date fechaHace18 = UtilDate.fechaMayorEdad();
 
-		if (dbManager.actorExistente(id)) {
+		if (dbManager.actorExistente(datos.get(0))) {
 
 			dbManager.close();
-			return 1; //El usuario que intenta a�adir ya existe
+			return 1; //El usuario que intenta anadir ya existe
 		}
 		else 
 
@@ -95,7 +96,7 @@ public class BLFacadeImplementation  implements BLFacade {
 
 			else 
 				if (fechaN.before(fechaHace18))
-					dbManager.registrarUsuario(id, DNI, Nombre, Apellido1, Apellido2, fechaN, contrasena, sexo, email,tlfn, admin);
+					dbManager.registrarUsuario(datos, fechaN, sexo, admin);
 				else 
 					return 3;
 

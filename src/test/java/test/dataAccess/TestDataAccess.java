@@ -56,35 +56,47 @@ public class TestDataAccess {
 	}
 	
 	
-	public int aplicarPromocion(String text, Usuario actor) {
-		try {
-
-		TypedQuery<Promocion> query = db.createQuery("SELECT p FROM Promocion p",Promocion.class);
-		query.setParameter(1, text);
-
-		List<Promocion> resultados = query.getResultList();
-		Promocion resul= new Promocion("0");
-		for(Promocion e: resultados) {
+	public Promocion obtenerPromo (List<Promocion> promociones, String text) {
+		
+		Promocion resul= new Promocion("0");		
+		for(Promocion e: promociones) {
 			if(e.getCode().equals(text)) {
-				resul= e;
+			resul= e;
 			}
+		}	
+		return resul;
+	}
+	
+	public boolean promoUsada(Promocion resul, Usuario actor) {
+		
+		for (Usuario a: resul.getUsuarios()) {
+			if (a.getDNI().equals(actor.getDNI())) return true;
 		}
 		
-			for (Usuario a: resul.getUsuarios()) {
-				if (a.getDNI().equals(actor.getDNI())) return 1;
-			}
+		return false;
+	}
+
+	public int aplicarPromocion(String text, Usuario actor) {
+		try {
+		
+		TypedQuery<Promocion> query = db.createQuery("SELECT p FROM Promocion p",Promocion.class);
+		query.setParameter(1, text);
+		List<Promocion> resultados = query.getResultList();
+
+		
+		Promocion resul = this.obtenerPromo(resultados,text);
+		boolean usado = this.promoUsada(resul, actor);		
+		if(usado) return 1;
 			
+			db.getTransaction().begin();
 			Promocion mod= db.find(Promocion.class, resul);
 			if(mod.getNum_veces()<=0) return 2;
 			mod.setNum_veces(mod.getNum_veces()-1);
 			Usuario user= db.find(Usuario.class, actor);
 			mod.anadirUsuario(user);
 
-			if(mod.getCompeticion()==null && !mod.isTipo()) {
-				
-				user.setSaldo(user.getSaldo()+mod.getCant());
-				
-			}else user.anadirPromo(mod);	
+			if(mod.getCompeticion()==null && !mod.isTipo()) user.setSaldo(user.getSaldo()+mod.getCant());
+			else user.anadirPromo(mod);	
 
 			db.persist(mod);
 			db.persist(user);
@@ -152,11 +164,12 @@ public class TestDataAccess {
 	}
 
 
-	public void anadirPromocion(Promocion p) {
+	public int anadirPromocion(Promocion p) {
 		db.getTransaction().begin();
 		Promocion pr = p;
 		db.persist(pr);
 		db.getTransaction().commit();
+		return 0;
 	}
 	
 	public void anadirUsuario(Usuario u) {

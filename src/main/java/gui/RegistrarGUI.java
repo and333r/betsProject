@@ -384,6 +384,33 @@ public class RegistrarGUI extends JFrame {
 		this.lblSeleccionaGenero.setVisible(false);
 		this.lblSeleccionFecha.setVisible(false);
 	}
+	
+	
+	public void comprobacionErrores(int resultado) {
+		
+		switch (resultado) {
+		case 0 :
+			this.regAdmin= false;
+			cerrarGUI();
+			break;
+		case 1:
+			this.lblErrorCampos.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorRegistroUsuario1"));
+			this.lblErrorCampos.setVisible(true);
+			break;
+		case 2: 
+			this.lblErrorCampos.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorRegistroUsuario2"));
+			this.lblErrorCampos.setVisible(true);
+			break;
+		case 3: 
+			this.lblErrorCampos.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorRegistroUsuario3"));
+			this.lblErrorCampos.setVisible(true);
+			break;
+		default:
+			this.lblErrorCampos.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorRegistroUsuario-1"));
+			this.lblErrorCampos.setVisible(true);
+			break;
+		}
+	}
 
 	private void jbtnRegistrarActionPerformed (ActionEvent e) {
 
@@ -421,33 +448,20 @@ public class RegistrarGUI extends JFrame {
 
 							Date fechaNacimiento = UtilDate.newDate(ano, mes, dia);
 							String contrasena = String.copyValueOf(this.passwordField.getPassword());
-							//comboBox = (Offer) offerBox.getSelectedItem();
+							
+							ArrayList<String> datos = new ArrayList<String>();
+							datos.add(this.textFNombreUsuario.getText()); 
+							datos.add(this.textFDni.getText());
+							datos.add(this.textFName.getText());
+							datos.add(this.textFApellido1.getText());
+							datos.add(this.textFApellido2.getText());
+							datos.add(contrasena);
+							datos.add(this.textFEmail.getText());
+							datos.add(this.textFTelefono.getText());
 
-							int resultado = facadeIm.registrarUsuario(this.textFNombreUsuario.getText(), this.textFDni.getText(), this.textFName.getText(), this.textFApellido1.getText(), this.textFApellido2.getText(), fechaNacimiento, contrasena, sexo, this.textFEmail.getText(), this.textFTelefono.getText(), this.regAdmin);
+							int resultado = facadeIm.registrarUsuario(datos, fechaNacimiento, sexo, this.regAdmin);
 
-							switch (resultado) {
-							case 0 :
-								this.regAdmin= false;
-								cerrarGUI();
-								break;
-							case 1:
-								this.lblErrorCampos.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorRegistroUsuario1"));
-								this.lblErrorCampos.setVisible(true);
-								break;
-							case 2: 
-								this.lblErrorCampos.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorRegistroUsuario2"));
-								this.lblErrorCampos.setVisible(true);
-								break;
-							case 3: 
-								this.lblErrorCampos.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorRegistroUsuario3"));
-								this.lblErrorCampos.setVisible(true);
-								break;
-							default:
-								this.lblErrorCampos.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorRegistroUsuario-1"));
-								this.lblErrorCampos.setVisible(true);
-								break;
-							}
-
+							this.comprobacionErrores(resultado);
 						}
 					}
 				
