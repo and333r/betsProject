@@ -152,7 +152,8 @@ public class crearApuestaDAWTest {
 			
 			Promocion promoPremier= new Promocion("222", "Premier League");
 			u0.anadirPromo(promoPremier);
-
+				//testDA.borrarUsuario(u0);
+				//testDA.borrarPronostico(p0);
 			testDA.anadirUsuario(u0);
 			testDA.crearPronostico(p0);
 			testDA.close();

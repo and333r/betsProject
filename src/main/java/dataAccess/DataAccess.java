@@ -476,7 +476,7 @@ public class DataAccess  {
 		}
 		return 2;
 	}
-		
+
 	public int crearApuesta(Pronostico pronostico, Usuario usuario, double cantidad) {
 
 		this.open(false);
