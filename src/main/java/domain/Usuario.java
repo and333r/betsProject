@@ -47,6 +47,11 @@ public class Usuario extends Actor{
 		super(string, "12345678N");
 	}
 
+	public Usuario(String string, String string2, ArrayList<Promocion> arrayList) {
+		super(string,string2);
+		this.promos_abiertas = arrayList;
+	}
+
 	public void anadirPromo (Promocion user) {
 		this.promos_abiertas.add(user);
 	}
