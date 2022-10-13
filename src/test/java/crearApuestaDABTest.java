@@ -29,6 +29,8 @@ public class crearApuestaDABTest {
 			 
 			testDA.open();
 			u3.setSaldo(0);
+				//testDA.borrarUsuario(u3);
+				//testDA.borrarPronostico(p3);
 			testDA.anadirUsuario(u3);
 			testDA.crearPronostico(p3);
 			testDA.close();
@@ -61,18 +63,18 @@ public class crearApuestaDABTest {
 			
 			testDA.open();
 			u4.setSaldo(500);
-			//testDA.borrarUsuario(u4);
-			//testDA.borrarPronostico(p4);
+				//testDA.borrarUsuario(u4);
+				//testDA.borrarPronostico(p4);
 			testDA.anadirUsuario(u4);
 			p4.setMinBet(2);
 			Pregunta pr= new Pregunta("Pregunta1");
 			p4.setPregunta(pr);
-			//testDA.borrarPregunta(pr);
+				//testDA.borrarPregunta(pr);
 			testDA.anadirPregunta(pr);
 			p4.getPregunta().setMinBet(500);
 			testDA.crearPronostico(p4);
 			Apuesta apuesta = new Apuesta (p4,u4,500);
-			//testDA.borrarApuesta(apuesta);
+				//testDA.borrarApuesta(apuesta);
 			testDA.close();
 
 			int res= sut.crearApuesta(p4, u4, 1);
@@ -105,15 +107,15 @@ public class crearApuestaDABTest {
 			
 			testDA.open();
 			u5.setSaldo(500);
-			//testDA.borrarUsuario(u5);
+				//testDA.borrarUsuario(u5);
 			testDA.anadirUsuario(u5);
 			p5.setMinBet(2);
 			Pregunta pr= new Pregunta("Pregunta2");
 			p5.setPregunta(pr);
-			//testDA.borrarPregunta(pr);
+				//testDA.borrarPregunta(pr);
 			testDA.anadirPregunta(pr);
 			p5.getPregunta().setMinBet(1);
-			//testDA.borrarPronostico(p5);
+				//testDA.borrarPronostico(p5);
 			testDA.crearPronostico(p5);
 			Apuesta apuesta = new Apuesta (p5,u5,500);
 						
@@ -134,6 +136,7 @@ public class crearApuestaDABTest {
 			
 		}
 		catch(Exception e){
+
 			e.printStackTrace();
 			fail();
 		}
@@ -145,14 +148,14 @@ public class crearApuestaDABTest {
 		try {
 			
 			 ArrayList<Promocion> promos = new ArrayList<Promocion>();
-			 Usuario u0 = new Usuario("Ander4", promos);
+			 Usuario u0 = new Usuario("Ander4.1", promos);
 			 
 			 Pronostico p0= new Pronostico("444444", "La Liga Santander");
 			
 			testDA.open();
 			u0.setSaldo(0);
-			//testDA.borrarUsuario(u0);
-			//testDA.borrarPronostico(p0);
+				//testDA.borrarUsuario(u0);
+				//testDA.borrarPronostico(p0);
 			
 			Promocion promoPremier= new Promocion("222", "Premier League");
 			u0.anadirPromo(promoPremier);
@@ -192,13 +195,16 @@ public class crearApuestaDABTest {
 			u6.setSaldo(1000);
 			Pregunta pr= new Pregunta("Pregunta3");
 			p6.setPregunta(pr);
+				//testDA.borrarPregunta(pr);
 			testDA.anadirPregunta(pr);
 			p6.getPregunta().setMinBet(1);
 
 			Promocion promoPremier= new Promocion("22772", "La Liga Santander");
 			promoPremier.setTipo(true);
 			u6.anadirPromo(promoPremier);
-
+				
+				//testDA.borrarUsuario(u6);
+				//testDA.borrarPronostico(p6);
 			testDA.anadirUsuario(u6);
 			testDA.crearPronostico(p6);
 			testDA.close();
@@ -237,12 +243,16 @@ public class crearApuestaDABTest {
 			u6.setSaldo(1000);
 			Pregunta pr= new Pregunta("Pregunta4");
 			p6.setPregunta(pr);
+				//testDA.borrarPregunta(pr);
 			testDA.anadirPregunta(pr);
 			p6.getPregunta().setMinBet(1);
 			Promocion promoPremier= new Promocion("2882772", "La Liga Santander");
 			promoPremier.setTipo(false);
 			u6.anadirPromo(promoPremier);
 
+			
+				//testDA.borrarUsuario(u6);
+				//testDA.borrarPronostico(p6);
 			testDA.anadirUsuario(u6);
 			testDA.crearPronostico(p6);
 			
@@ -278,6 +288,9 @@ public class crearApuestaDABTest {
 		Usuario u7 = new Usuario("Ander7", promos);
 		Pronostico p7= new Pronostico("777777", "La Liga Santander");
 		testDA.open();
+		
+			//testDA.borrarUsuario(u7);
+			//testDA.borrarPronostico(p7);
 		testDA.anadirUsuario(u7);
 		testDA.crearPronostico(p7);
 		testDA.close();

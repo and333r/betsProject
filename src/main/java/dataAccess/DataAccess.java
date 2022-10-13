@@ -207,7 +207,8 @@ public class DataAccess  {
 			db.persist(a);
 		}
 		else { //se anade un administrador
-			Actor a = new Administrador(datos.get(0),datos.get(1),datos.get(2),datos.get(3),datos.get(4),fechaNacimiento,datos.get(5),sexo,datos.get(6),datos.get(7));			db.persist(a);
+			Actor a = new Administrador(datos.get(0),datos.get(1),datos.get(2),datos.get(3),datos.get(4),fechaNacimiento,datos.get(5),sexo,datos.get(6),datos.get(7));
+			db.persist(a);
 		}
 
 		db.getTransaction().commit();
@@ -393,8 +394,10 @@ public class DataAccess  {
 	}
 	
 	public Usuario obtenerUsuarioDeseado(Usuario u) {
+
 		TypedQuery<Usuario> query = db.createQuery("SELECT u FROM Usuario u",Usuario.class);
 		List<Usuario> prontc = query.getResultList();
+		
 		
 		for(Usuario e: prontc) {
 			if(u.getNombreUsuario().equals(e.getNombreUsuario())) {
@@ -404,48 +407,106 @@ public class DataAccess  {
 		return null;
 		
 	}
+	
+	public Pronostico obtenerPronostico(Pronostico p) {
+		Pronostico pr=db.find(Pronostico.class, p.getId());
+		return pr;
+				
+	}
+	
+	
+	public ArrayList<Promocion> buscarYAplicarPromociones (Usuario us, Pronostico p, double cantidad) {
+		
+		double cant=cantidad;
+		ArrayList<Promocion> promos = new ArrayList<Promocion>();
+		
+		Usuario u= this.obtenerUsuarioDeseado(us);
+		u.setPromos_abiertas(us.getPromos_abiertas());
+		
+		for(Promocion e: u.getPromos_abiertas()) {
+			if(p.getComp().equals(e.getNombreComo())) {
+				promos.add(e);
+			}
+		}
+			return promos;
+			}
+
+	
+	public ArrayList<Promocion> actualizarUsuarioP (Usuario us, ArrayList<Promocion> promo) {
+		
+		Usuario u= this.obtenerUsuarioDeseado(us);
+		u.setPromos_abiertas(us.getPromos_abiertas());
+		
+		for(Promocion e: promo) {
+			u.getPromos_abiertas().remove(e);
+			System.out.println(u.getPromos_abiertas().size());
+		}
+		db.persist(u);
+		
+		return u.getPromos_abiertas();
+	}
+	
+	
+	public double calcularPromociones(ArrayList<Promocion> promos,double cantidad) {
+		double cant=cantidad;
+		
+		for(Promocion e: promos) {
+			if(!e.isTipo()) {
+				double aux2=e.getCant();
+				cant=(cantidad + aux2);	
+				}
+				else {
+				double aux= e.getCant();
+				cant =(cantidad + (cantidad*(aux/100.0)));
+				}
+		}
+		
+		
+		return cant;
+		
+	}
+	
+	public int comprobarApuesta(Usuario u, Pronostico p, double cantidad, double cant) {
+		 
+		if(u.getSaldo() >= cantidad) {
+			if((p.getPregunta().getMinBet())<cant) {
+				return 0;
+			}
+			return 1;
+		}
+		return 2;
+	}
+		
 	public int crearApuesta(Pronostico pronostico, Usuario usuario, double cantidad) {
 
 		this.open(false);
 		ArrayList<Promocion> promo= new ArrayList<Promocion>();
 		double cant=cantidad;
+		
+		
 		db.getTransaction().begin();
 		
 		Usuario u= this.obtenerUsuarioDeseado(usuario);
+		u.setPromos_abiertas(usuario.getPromos_abiertas());
 		
-		Pronostico p = db.find(Pronostico.class, pronostico.getId());
+		Pronostico p = this.obtenerPronostico(pronostico);
+		p.setMinBet(pronostico.getMinBet());
 		
 		if(u==null | p==null | cantidad < 0.0) return 4;
 
-		if(!usuario.getPromos_abiertas().isEmpty()) {
-		for(Promocion e: usuario.getPromos_abiertas()) {
-			if(p.getComp().equals(e.getNombreComo())) {
-				promo.add(e);
-			}
+		if(!u.getPromos_abiertas().isEmpty()) {
+			promo= this.buscarYAplicarPromociones(u, p, cantidad);
+			cant= this.calcularPromociones(promo, cantidad);
+			u.setPromos_abiertas(this.actualizarUsuarioP(u, promo));
+			
 		}
 		
+		Apuesta apuesta = new Apuesta (p,u,cant);
 		
-		for(Promocion b: promo) {
-			if(!b.isTipo()) {
-				double aux2=b.getCant();
-				cant=(cantidad + aux2);	
-			}
-			else {
-				double aux= b.getCant();
-				cant =(cantidad + (cantidad*(aux/100.0)));
-			}
-			int index= usuario.getPromos_abiertas().indexOf(b);
-			usuario.getPromos_abiertas().remove(index);
-		}
+		int comprobacion= this.comprobarApuesta(u, p, cantidad, cant);
 		
-		}
-		
-		Apuesta apuesta = new Apuesta (pronostico,usuario,cant);
-		u.setPromos_abiertas(usuario.getPromos_abiertas());
-		
-		if (u.getSaldo() >= cantidad) {
-			if ((p.getPregunta().getMinBet()) < cant) {
-				System.out.println(p.getPregunta().getMinBet());
+		switch(comprobacion) {
+			case 0:
 				u.anadirApuesta(apuesta);
 				p.anadirApuesta(apuesta);
 				u.actualizarSaldo(-cantidad);
@@ -454,13 +515,15 @@ public class DataAccess  {
 				IniciarSesionGUI.cambiarActor(u);
 				db.getTransaction().commit();
 				return 0;
-			} else {
+				
+			case 1:
 				db.getTransaction().rollback();
 				return 1;
-			} 
-		}else {
-			db.getTransaction().rollback();
-			return 2;
+			case 2:
+				db.getTransaction().rollback();
+				return 2;
+			default:
+				return -1;
 		}
 
 
