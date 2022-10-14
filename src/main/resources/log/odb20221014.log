@@ -36,3 +36,155 @@ Type domain.InformeError is not enhanced.
 [2022-10-14 00:00:09 #12 type] 
 Type domain.Promocion is not enhanced.
 
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-10-14 15:36:46 #1 store] 
+Database '/Users/and333r/git/betsProject/src/main/resources/bets.temp' has been recovered (tr. 4423-4437)
+
+[2022-10-14 15:36:46 #2 store] 
+Database '/Users/and333r/git/betsProject/src/main/resources/bets.temp' is opened by 4844@MacBook-de-Ander.local
+
+[2022-10-14 15:36:47 #3 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-10-14 15:36:47 #4 type] 
+Type domain.Actor is not enhanced.
+
+[2022-10-14 15:36:47 #5 type] 
+Type domain.Evento is not enhanced.
+
+[2022-10-14 15:36:47 #6 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-10-14 15:36:47 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-10-14 15:36:47 #8 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-10-14 15:36:47 #9 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-10-14 15:36:47 #10 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-10-14 15:36:47 #11 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-10-14 15:36:47 #12 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-10-14 15:37:03 #1 store] 
+Database '/Users/and333r/git/betsProject/src/main/resources/bets.temp' has been recovered (tr. 4438-4452)
+
+[2022-10-14 15:37:03 #2 store] 
+Database '/Users/and333r/git/betsProject/src/main/resources/bets.temp' is opened by 4845@MacBook-de-Ander.local
+
+[2022-10-14 15:37:03 #3 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-10-14 15:37:03 #4 type] 
+Type domain.Actor is not enhanced.
+
+[2022-10-14 15:37:03 #5 type] 
+Type domain.Evento is not enhanced.
+
+[2022-10-14 15:37:03 #6 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-10-14 15:37:03 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-10-14 15:37:03 #8 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-10-14 15:37:03 #9 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-10-14 15:37:03 #10 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-10-14 15:37:03 #11 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-10-14 15:37:03 #12 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-10-14 15:37:16 #1 store] 
+Database '/Users/and333r/git/betsProject/src/main/resources/bets.temp' has been recovered (tr. 4453-4467)
+
+[2022-10-14 15:37:16 #2 store] 
+Database '/Users/and333r/git/betsProject/src/main/resources/bets.temp' is opened by 4847@MacBook-de-Ander.local
+
+[2022-10-14 15:37:16 #3 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-10-14 15:37:16 #4 type] 
+Type domain.Actor is not enhanced.
+
+[2022-10-14 15:37:16 #5 type] 
+Type domain.Evento is not enhanced.
+
+[2022-10-14 15:37:16 #6 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-10-14 15:37:16 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-10-14 15:37:16 #8 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-10-14 15:37:16 #9 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-10-14 15:37:16 #10 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-10-14 15:37:16 #11 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-10-14 15:37:16 #12 type] 
+Type domain.Promocion is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-10-14 15:37:23 #1 store] 
+Database '/Users/and333r/git/betsProject/src/main/resources/bets.temp' has been recovered (tr. 4468-4509)
+
+[2022-10-14 15:37:23 #2 store] 
+Database '/Users/and333r/git/betsProject/src/main/resources/bets.temp' is opened by 4849@MacBook-de-Ander.local
+
+[2022-10-14 15:37:23 #3 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-10-14 15:37:23 #4 type] 
+Type domain.Actor is not enhanced.
+
+[2022-10-14 15:37:23 #5 type] 
+Type domain.Evento is not enhanced.
+
+[2022-10-14 15:37:23 #6 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-10-14 15:37:23 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-10-14 15:37:23 #8 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-10-14 15:37:23 #9 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-10-14 15:37:23 #10 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-10-14 15:37:23 #11 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-10-14 15:37:23 #12 type] 
+Type domain.Promocion is not enhanced.
+
