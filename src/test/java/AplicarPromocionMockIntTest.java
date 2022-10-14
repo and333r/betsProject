@@ -55,17 +55,22 @@ public class AplicarPromocionMockIntTest {
 	public void test1() {
 	try
 	{
+		Promocion p = new Promocion("prueba",new ArrayList<Usuario>(),2);
+		Usuario u2 = new Usuario("alejandra","12356789a", new ArrayList<Promocion>());
 		Usuario u1 = new Usuario("a", new ArrayList<Promocion>()); //Usuario no almacenado en la base de datos.
+		
 		String text = "prueba"; //Texto de la promocion que no esta almacenado en la bd
-		
-		Mockito.doReturn(false).when(db).aplicarPromocion("a",u1); //U1 no esta en la bd luego devuelve false.
-		
-		Mockito.doReturn(false).when(db).aplicarPromocion(text,u1); //text no esta en la bd.
-	
-	System.out.println("db.aplicarPromocion(a,u1) --> 0");
-	}
-	catch
-	(Exception e) {
+				
+		Mockito.when(db.obtenerActor(u1.getNombreUsuario())).thenReturn(new Usuario("a", new ArrayList<Promocion>()));
+		Mockito.when(db.anadirUsuario(u1)).thenReturn(true);
+		Mockito.when(db.anadirUsuario(u2)).thenReturn(true);
+		Mockito.when(db.anadirPromocion(p)).thenReturn(0);
+
+	 int resul = bl.aplicarPromocion(text, u1);
+	 System.out.println(resul);
+	 
+	 assertEquals(0,resul);
+	}catch (Exception e) {
 	
 	e.printStackTrace();
 	}
@@ -77,10 +82,12 @@ public class AplicarPromocionMockIntTest {
 		Usuario u1 = new Usuario("Lonbas","12351789N", new ArrayList<Promocion>());
 		 try { 
 				
-				String text = null;
+				String text2 = null;
 				
 				Mockito.when(db.anadirUsuario(u1)).thenReturn(true);
-				int resul = bl.aplicarPromocion(text, u1);
+				Mockito.when(db.aplicarPromocion(text2, u1)).thenReturn(3);
+				int resul = bl.aplicarPromocion(text2, u1);
+				System.out.println(resul);
 				assertEquals(3,resul);
 				
 				

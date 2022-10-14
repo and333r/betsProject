@@ -1,0 +1,38 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-10-14 00:00:09 #1 store] 
+Database 'C:\Users\MIKEL\git\betsProject\src\main\resources\bets.temp' has been recovered (tr. 4381-4422)
+
+[2022-10-14 00:00:09 #2 store] 
+Database 'C:\Users\MIKEL\git\betsProject\src\main\resources\bets.temp' is opened by 18168@DESKTOP-SLHH47P
+
+[2022-10-14 00:00:09 #3 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-10-14 00:00:09 #4 type] 
+Type domain.Actor is not enhanced.
+
+[2022-10-14 00:00:09 #5 type] 
+Type domain.Evento is not enhanced.
+
+[2022-10-14 00:00:09 #6 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-10-14 00:00:09 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-10-14 00:00:09 #8 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-10-14 00:00:09 #9 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-10-14 00:00:09 #10 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-10-14 00:00:09 #11 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-10-14 00:00:09 #12 type] 
+Type domain.Promocion is not enhanced.
+
