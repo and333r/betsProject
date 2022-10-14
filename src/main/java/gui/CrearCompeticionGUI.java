@@ -181,7 +181,18 @@ public class CrearCompeticionGUI extends JFrame {
 			
 			String temporada = (String) this.comboBoxTemporada.getSelectedItem();
 			
-			facade.crearCompeticion(this.textFNombre.getText(), this.textFDeporte.getText(), sexo, temporada, this.textFDeporte.getText(), IniciarSesionGUI.actor());
+			//nombre, deoporte, temporada,descripcion
+			
+			ArrayList<String> data = new ArrayList<String>();
+			
+			
+			data.add(this.textFNombre.getText());
+			data.add(this.textFDeporte.getText());
+			data.add(temporada);
+			data.add(this.textFDeporte.getText());
+			
+			
+			facade.crearCompeticion(sexo, IniciarSesionGUI.actor(), data);
 		}
 		
 	}
