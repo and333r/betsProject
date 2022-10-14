@@ -331,12 +331,14 @@ public class DataAccess  {
 	 * @param temporada
 	 * @param descripcion
 	 */
-
-	public Competicion crearCompeticion(String nombre, String deporte, char genero, String temporada, String descripcion, Actor admin) {
+	
+	//nombre, deoporte, temporada,descripcion
+	
+	public Competicion crearCompeticion( char genero, Actor admin, ArrayList<String> data) {
 
 		db.getTransaction().begin();
 		Administrador admin0= (Administrador) db.find(Actor.class, admin.getNombreUsuario());
-		Competicion competicion = new Competicion(nombre,  deporte,  genero,  temporada, descripcion, admin0);
+		Competicion competicion = new Competicion(data.get(0),  data.get(2),  genero,  data.get(2), data.get(3), admin0);
 		db.persist(competicion);
 		db.getTransaction().commit();
 

@@ -153,13 +153,17 @@ public class BLFacadeImplementation  implements BLFacade {
 	 * @return 1: La competicion esta a�adida; 0: To ok
 	 */
 
-	public Competicion crearCompeticion(String nombre, String deporte, char genero, String temporada, String descripcion, Actor admin) {
+	
+	//nombre, deoporte, temporada,descripcion
+
+
+	public Competicion crearCompeticion(char genero, Actor admin, ArrayList<String> data) {
 
 		dbManager.open(false);
 
 		Competicion competicion = null;
-		if (!dbManager.existeCompeticion("Competicion:" + nombre)) {
-			competicion = dbManager.crearCompeticion(nombre, deporte, genero, temporada, descripcion, admin);
+		if (!dbManager.existeCompeticion("Competicion:" + data.get(0))) {
+			competicion = dbManager.crearCompeticion( genero, admin, data);
 		}
 		//Si la competicion ya est� a�adida.
 		dbManager.close();
