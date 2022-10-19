@@ -332,7 +332,6 @@ public class crearApuestaDABTest {
 		testDA.close();
 		}
 		catch(Exception e) {
-			e.printStackTrace();
 			assertTrue(true);
 		}
 		
@@ -356,7 +355,6 @@ public class crearApuestaDABTest {
 		testDA.close();
 		}
 		catch(Exception e) {
-			e.printStackTrace();
 			assertTrue(true);
 		}
 		
