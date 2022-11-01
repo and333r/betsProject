@@ -9,6 +9,8 @@ import java.util.List;
 
 import javax.persistence.TypedQuery;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -24,6 +26,7 @@ public class AplicarPromocionDABTest {
 	 
 	 //additional operations needed to execute the test 
 	 static TestDataAccess testDA = new TestDataAccess();
+	
 	 
 	 @Test	 //Caso donde nos salta la excepcion cuando nos llega un parametro nulo.
 	 public void test1() {
@@ -111,6 +114,7 @@ public class AplicarPromocionDABTest {
 		 } 
 		 	 
 	 }
+
 	 
 	 @Test //Caso donde el usuario ya ha utilizado el codigo, devuelve 1
 	 public void test4() {
@@ -125,9 +129,9 @@ public class AplicarPromocionDABTest {
 		 int comp = testDA.anadirPromocion(p);
 		 System.out.println(comp);
 		 testDA.anadirUsuario(u1);
+		 int resul = sut.aplicarPromocion(text, u1);
 		 testDA.close();
 		 
-		 int resul = sut.aplicarPromocion(text, u1);
 		 System.out.println(resul);
 		 
 		 assertEquals(1,resul);
@@ -151,40 +155,45 @@ public class AplicarPromocionDABTest {
 	 
 	 @Test //Caso donde todo va bien, devuelve 0
 	 public void test5() {
-		 Promocion p = new Promocion("LaLiga ofer",new ArrayList<Usuario>(),2);
-			Usuario u1 = new Usuario("pablo", "12356789l", new ArrayList<Promocion>());
-			Usuario u2 = new Usuario("alejandra","12356789a", new ArrayList<Promocion>());
+
+		 Promocion p = new Promocion("LaLiga offers",new ArrayList<Usuario>(),3);
+		 	Promocion p2 = new Promocion("LaLiga ofertas",new ArrayList<Usuario>(),0);
+			Usuario u1 = new Usuario("AnderTest1", "12376789h", new ArrayList<Promocion>());
+			Usuario u2 = new Usuario("MikelTest1", "11396789h", new ArrayList<Promocion>());
+			u1.setSaldo(100);
+			u1.anadirPromo(p2);
+			u2.anadirPromo(p2);
 			p.anadirUsuario(u2);
-		 
+			
 		try {
-		 
-		 String text = "LaLiga ofer";
+		 String text = "LaLiga offers";
 		 testDA.open();
-		 int comp = testDA.anadirPromocion(p);
-		 System.out.println(comp);
 		 testDA.anadirUsuario(u1);
 		 testDA.anadirUsuario(u2);
-		 testDA.close();
+		 int comp = testDA.anadirPromocion(p);
+		 System.out.println(comp);
+		 
 		 
 		 int resul = sut.aplicarPromocion(text, u1);
 		 System.out.println(resul);
+		 testDA.close();
 		 
 		 assertEquals(0,resul);
 			 
 			
 			testDA.open();
+			testDA.borrarPromocion(p);
 			testDA.borrarUsuario(u1);
 			testDA.borrarUsuario(u2);
-			testDA.borrarPromocion(p);
 			testDA.close();
 			
 		 } catch(Exception e) {
+			 e.printStackTrace();
 			 	testDA.open();
+				testDA.borrarPromocion(p);
 				testDA.borrarUsuario(u1);
 				testDA.borrarUsuario(u2);
-				testDA.borrarPromocion(p);
 				testDA.close();
-			 e.printStackTrace();
 			 fail();
 		 } 
 		 	 

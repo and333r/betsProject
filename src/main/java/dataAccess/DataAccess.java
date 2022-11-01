@@ -988,15 +988,20 @@ public class DataAccess  {
 			
 			db.getTransaction().begin();
 			Promocion mod= db.find(Promocion.class, resul);
+			db.persist(mod);
+			db.getTransaction().commit();
+			
 			if(mod.getNum_veces()<=0) return 2;
+			
 			mod.setNum_veces(mod.getNum_veces()-1);
+			
+			db.getTransaction().begin();
 			Usuario user= db.find(Usuario.class, actor);
 			mod.anadirUsuario(user);
 
 			if(mod.getCompeticion()==null && !mod.isTipo()) user.setSaldo(user.getSaldo()+mod.getCant());
 			else user.anadirPromo(mod);	
 
-			db.persist(mod);
 			db.persist(user);
 			db.getTransaction().commit();
 			

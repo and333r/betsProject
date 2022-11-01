@@ -94,6 +94,7 @@ public class Promocion {
 		this.code = string;
 		this.usuarios = arrayList;
 		this.cant = i;
+		this.num_veces = i;
 	}
 
 	public String getId() {
