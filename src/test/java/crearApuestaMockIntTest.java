@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /*
+=======
+
+>>>>>>> branch 'master' of https://github.com/and333r/betsProject.git
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
@@ -189,4 +193,7 @@ public class crearApuestaMockIntTest {
 	
 }
 }
+<<<<<<< HEAD
 */
+=======
+>>>>>>> branch 'master' of https://github.com/and333r/betsProject.git
