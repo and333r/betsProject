@@ -19,6 +19,7 @@ import domain.Promocion;
 import domain.Usuario;
 import test.dataAccess.TestDataAccess;
 
+//Tests caja negra
 public class AplicarPromocionDABTest {
 	
 	//sut:system under test
