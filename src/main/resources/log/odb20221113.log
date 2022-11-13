@@ -1,0 +1,264 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-11-13 17:13:50 #1 store] 
+Database '/Users/and333r/git/betsProjectt/src/main/resources/bets.temp' is opened by 4090@MacBook-de-Ander.local
+
+[2022-11-13 17:13:50 #2 type.registry] 
+New type domain.Actor
+
+[2022-11-13 17:13:50 #3 type.registry] 
+New type domain.Usuario
+
+[2022-11-13 17:13:50 #4 type] 
+Type domain.Actor is not enhanced.
+
+[2022-11-13 17:13:50 #5 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-11-13 17:13:50 #6 type.registry] 
+New type java.util.ArrayList<java.lang.String>
+
+[2022-11-13 17:13:50 #7 type.registry] 
+New type domain.InformeError
+
+[2022-11-13 17:13:50 #8 type.registry] 
+New type java.util.ArrayList<domain.InformeError>
+
+[2022-11-13 17:13:50 #9 type.registry] 
+New type domain.Promocion
+
+[2022-11-13 17:13:50 #10 type.registry] 
+New type java.util.ArrayList<domain.Promocion>
+
+[2022-11-13 17:13:50 #11 type.registry] 
+New type domain.Apuesta
+
+[2022-11-13 17:13:50 #12 type.registry] 
+New type java.util.ArrayList<domain.Apuesta>
+
+[2022-11-13 17:13:50 #13 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-11-13 17:13:50 #14 type] 
+Type domain.Promocion is not enhanced.
+
+[2022-11-13 17:13:50 #15 type.registry] 
+New type java.util.ArrayList<domain.Usuario>
+
+[2022-11-13 17:13:50 #16 type.registry] 
+New type domain.Competicion
+
+[2022-11-13 17:13:50 #17 type.registry] 
+New type domain.Administrador
+
+[2022-11-13 17:13:50 #18 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-11-13 17:13:50 #19 type.registry] 
+New type java.util.Date[]
+
+[2022-11-13 17:13:50 #20 type.registry] 
+New type double[]
+
+[2022-11-13 17:13:50 #21 type.registry] 
+New type domain.Pronostico
+
+[2022-11-13 17:13:50 #22 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-11-13 17:13:50 #23 type.registry] 
+New type domain.Evento
+
+[2022-11-13 17:13:50 #24 type.registry] 
+New type java.util.Vector<domain.Evento>
+
+[2022-11-13 17:13:50 #25 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-11-13 17:13:50 #26 type.registry] 
+New type java.util.ArrayList<domain.Competicion>
+
+[2022-11-13 17:13:50 #27 type.registry] 
+New type java.util.ArrayList<domain.Evento>
+
+[2022-11-13 17:13:50 #28 type.registry] 
+New type domain.Pregunta
+
+[2022-11-13 17:13:50 #29 type.registry] 
+New type java.util.ArrayList<domain.Pregunta>
+
+[2022-11-13 17:13:50 #30 type.registry] 
+New type java.util.ArrayList<domain.Pronostico>
+
+[2022-11-13 17:13:50 #31 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-11-13 17:13:50 #32 type.registry] 
+New type java.util.Vector<domain.Apuesta>
+
+[2022-11-13 17:13:50 #33 type] 
+Type domain.Evento is not enhanced.
+
+[2022-11-13 17:13:50 #34 type.registry] 
+New type java.util.Vector<domain.Pregunta>
+
+[2022-11-13 17:13:50 #35 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-11-13 17:13:50 #36 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-11-13 17:14:14 #1 store] 
+Database '/Users/and333r/git/betsProjectt/src/main/resources/bets.temp' is opened by 4100@MacBook-de-Ander.local
+
+[2022-11-13 17:14:14 #2 type.registry] 
+New type domain.Competicion
+
+[2022-11-13 17:14:14 #3 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-11-13 17:14:14 #4 type.registry] 
+New type domain.Actor
+
+[2022-11-13 17:14:14 #5 type.registry] 
+New type domain.Evento
+
+[2022-11-13 17:14:14 #6 type.registry] 
+New type java.util.Vector<domain.Evento>
+
+[2022-11-13 17:14:14 #7 type] 
+Type domain.Actor is not enhanced.
+
+[2022-11-13 17:14:14 #8 type] 
+Type domain.Evento is not enhanced.
+
+[2022-11-13 17:14:14 #9 type.registry] 
+New type domain.Pregunta
+
+[2022-11-13 17:14:14 #10 type.registry] 
+New type java.util.Vector<domain.Pregunta>
+
+[2022-11-13 17:14:14 #11 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-11-13 17:14:14 #12 type.registry] 
+New type domain.Pronostico
+
+[2022-11-13 17:14:14 #13 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-11-13 17:14:14 #14 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-11-13 17:14:14 #15 type.registry] 
+New type domain.Administrador
+
+[2022-11-13 17:14:14 #16 type.registry] 
+New type domain.Apuesta
+
+[2022-11-13 17:14:14 #17 type.registry] 
+New type java.util.Vector<domain.Apuesta>
+
+[2022-11-13 17:14:14 #18 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-11-13 17:14:14 #19 type.registry] 
+New type java.util.ArrayList<domain.Competicion>
+
+[2022-11-13 17:14:14 #20 type.registry] 
+New type java.util.ArrayList<domain.Evento>
+
+[2022-11-13 17:14:14 #21 type.registry] 
+New type java.util.ArrayList<domain.Pregunta>
+
+[2022-11-13 17:14:14 #22 type.registry] 
+New type java.util.ArrayList<domain.Pronostico>
+
+[2022-11-13 17:14:14 #23 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-11-13 17:14:14 #24 type.registry] 
+New type java.util.Date[]
+
+[2022-11-13 17:14:14 #25 type.registry] 
+New type double[]
+
+[2022-11-13 17:14:14 #26 type.registry] 
+New type domain.Usuario
+
+[2022-11-13 17:14:14 #27 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-11-13 17:14:14 #28 type.registry] 
+New type java.util.ArrayList<java.lang.String>
+
+[2022-11-13 17:14:14 #29 type.registry] 
+New type domain.InformeError
+
+[2022-11-13 17:14:14 #30 type.registry] 
+New type java.util.ArrayList<domain.InformeError>
+
+[2022-11-13 17:14:14 #31 type.registry] 
+New type domain.Promocion
+
+[2022-11-13 17:14:14 #32 type.registry] 
+New type java.util.ArrayList<domain.Promocion>
+
+[2022-11-13 17:14:14 #33 type.registry] 
+New type java.util.ArrayList<domain.Apuesta>
+
+[2022-11-13 17:14:14 #34 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-11-13 17:14:14 #35 type] 
+Type domain.Promocion is not enhanced.
+
+[2022-11-13 17:14:14 #36 type.registry] 
+New type java.util.ArrayList<domain.Usuario>
+
+[2022-11-13 17:14:14 #37 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2022-11-13 17:14:14 #38 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-11-13 17:14:49 #1 store] 
+Database '/Users/and333r/git/betsProjectt/src/main/resources/bets.temp' has been recovered (tr. 1-6)
+
+[2022-11-13 17:14:49 #2 store] 
+Database '/Users/and333r/git/betsProjectt/src/main/resources/bets.temp' is opened by 4107@MacBook-de-Ander.local
+
+[2022-11-13 17:14:49 #3 type] 
+Type domain.Competicion is not enhanced.
+
+[2022-11-13 17:14:49 #4 type] 
+Type domain.Actor is not enhanced.
+
+[2022-11-13 17:14:49 #5 type] 
+Type domain.Evento is not enhanced.
+
+[2022-11-13 17:14:49 #6 type] 
+Type domain.Pregunta is not enhanced.
+
+[2022-11-13 17:14:49 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-11-13 17:14:49 #8 type] 
+Type domain.Administrador is not enhanced.
+
+[2022-11-13 17:14:49 #9 type] 
+Type domain.Apuesta is not enhanced.
+
+[2022-11-13 17:14:49 #10 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-11-13 17:14:49 #11 type] 
+Type domain.InformeError is not enhanced.
+
+[2022-11-13 17:14:49 #12 type] 
+Type domain.Promocion is not enhanced.
+
