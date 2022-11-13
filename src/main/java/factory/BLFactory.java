@@ -34,7 +34,7 @@ public class BLFactory {
 		}
 		return appFacadeInterface;
 	}
-
+	
 
 	private BLFacade getWebBusinessLogicFactory() throws MalformedURLException {
 		BLFacade appFacadeInterface ;
@@ -62,9 +62,6 @@ public class BLFactory {
 		
 		DataAccess da= new DataAccess(c.getDataBaseOpenMode().equals("initialize"));
 		
-		Usuario usuario1 = new Usuario("Usuario1", "11111111F", "usuario", "primero", "primero", UtilDate.nuevaFecha(2001,10,25), "usuario", 'M', "usuario@gmail.com", "675253642");
-		System.out.println("hola");
-		System.out.println(da.obtenerUsuarioDeseado(usuario1));
 		appFacadeInterface =new BLFacadeImplementation(da);
 		
 		return appFacadeInterface;

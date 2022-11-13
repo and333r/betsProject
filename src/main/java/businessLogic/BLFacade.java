@@ -3,8 +3,14 @@ package businessLogic;
 
 
 
+import java.util.Date;
+
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+
+import domain.Competicion;
+import domain.Evento;
+import extendedIterator.ExtendedIterator;
 
 /**
  * Interface that specifies the business logic.
@@ -17,6 +23,9 @@ public interface BLFacade  {
 	 * It is invoked only when the option "initialize" is declared in the tag dataBaseOpenMode of resources/config.xml file
 	 */	
 	@WebMethod public void initializeBD();
+	
+	public ExtendedIterator<Evento> getEventsIterator(Date date);
+	
 
 	
 }

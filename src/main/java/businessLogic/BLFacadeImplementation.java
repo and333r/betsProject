@@ -16,6 +16,8 @@ import dataAccess.DataAccess;
 import domain.*;
 import exceptions.EventoNoExistenteException;
 import exceptions.PreguntaNoExistenteException;
+import extendedIterator.ExtendedIterator;
+import extendedIterator.ExtendedIteratorEvents;
 import gui.IniciarSesionGUI;
 
 /**
@@ -559,6 +561,21 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.close();
 		return eventos;
 	}
+	
+	public Vector<Evento> getEvents(Date date)  {
+		dbManager.open(false); 
+		Vector<Evento>events=dbManager.getEvents(date);
+		dbManager.close();
+		return events;
+		}
+	
+	
+	@Override
+	public ExtendedIterator<Evento> getEventsIterator(Date date){
+		ExtendedIterator<Evento> iterador = new ExtendedIteratorEvents(getEvents(date));
+		return iterador;
+	}
+	
 
 	public Vector<Pregunta> obtenerPreguntasAdmin(String nAdmin) {
 		dbManager.open(false);
@@ -765,4 +782,9 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.close();
 		return eventos;
 	}
+	
+
+	
+	
+	
 }

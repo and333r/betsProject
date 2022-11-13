@@ -58,9 +58,18 @@ public class DataAccess  {
 
 			Evento ev1 = new Evento("Atl�tico-Athletic", UtilDate.newDate(year,month,17),laLigaSantander,"", admin);
 			Evento ev2 = new Evento( "Eibar-Barcelona", UtilDate.newDate(year,month,17),laLigaSantander,"", admin);
+			Evento ev3 = new Evento( "Espanyol-Elche", UtilDate.newDate(2020,12,17),laLigaSantander,"", admin);
+			Evento ev4 = new Evento( "Sevilla-Betis", UtilDate.newDate(2020,12,17),laLigaSantander,"", admin);
+			Evento ev5 = new Evento( "Real Sociedad-Valladolid", UtilDate.newDate(2020,12,17),laLigaSantander,"", admin);
+			Evento ev6 = new Evento( "Cadiz-Madrid", UtilDate.newDate(2020,12,17),laLigaSantander,"", admin);
 
 			laLigaSantander.anadirEvento(ev1);
 			laLigaSantander.anadirEvento(ev2);
+			laLigaSantander.anadirEvento(ev3);
+			laLigaSantander.anadirEvento(ev4);
+			laLigaSantander.anadirEvento(ev5);
+			laLigaSantander.anadirEvento(ev6);
+			
 		
 			Pregunta p1;
 			Pregunta p2;
@@ -1148,6 +1157,19 @@ public class DataAccess  {
 		db.persist(pr);
 		db.getTransaction().commit();
 		return 0;
+	}
+
+	public Vector<Evento> getEvents(Date date) {
+		// System.out.println(">> DataAccess: getEvents");
+		Vector<Evento> res = new Vector<Evento>();
+		TypedQuery<Evento> query = db.createQuery("SELECT ev FROM Evento ev WHERE ev.fecha=?1", Evento.class);
+		query.setParameter(1, date);
+		List<Evento> events = query.getResultList();
+		for (Evento ev : events) {
+			System.out.println(ev.toString());
+			res.add(ev);
+		}
+		return res;
 	}
 	
 	/*
