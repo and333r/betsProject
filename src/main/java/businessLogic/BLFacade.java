@@ -8,6 +8,7 @@ import java.util.Date;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
+import domain.Actor;
 import domain.Competicion;
 import domain.Evento;
 import extendedIterator.ExtendedIterator;
@@ -25,6 +26,8 @@ public interface BLFacade  {
 	@WebMethod public void initializeBD();
 	
 	public ExtendedIterator<Evento> getEventsIterator(Date date);
+	
+	public Actor obtenerActor (String user);
 	
 
 	

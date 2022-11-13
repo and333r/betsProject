@@ -466,6 +466,7 @@ public class BLFacadeImplementation  implements BLFacade {
 	 * @param user Nombre del usuario que queremos obtener
 	 * @return Null si el user no existe, el objeto Usuario al que corresponda ese nombre
 	 */
+	@Override
 	public Actor obtenerActor (String user) {
 
 		Actor usuario = null;
