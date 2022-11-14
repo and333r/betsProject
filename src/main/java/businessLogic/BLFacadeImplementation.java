@@ -469,14 +469,23 @@ public class BLFacadeImplementation  implements BLFacade {
 	@Override
 	public Actor obtenerActor (String user) {
 
-		Actor usuario = null;
+		Usuario usuario = null;
 		dbManager.open(false);
 		if (dbManager.actorExistente(user)) { //Comprobar si el usuario existe
-			usuario= dbManager.obtenerActor (user); //Pillar el user de la BD
+;			usuario= (Usuario) dbManager.obtenerActor (user); //Pillar el user de la BD
+		}
+		
+		
+		Vector<Apuesta> apuestas = dbManager.obtenerApuestasAbiertasUsuario(user);
+		ArrayList<Apuesta> apuestass= new ArrayList<Apuesta>();
+		for(Apuesta a: apuestas) {
+			apuestass.add(a);
 		}
 		dbManager.close();
+		usuario.setApuestas(apuestass);
 		return usuario;
 	}
+	
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
